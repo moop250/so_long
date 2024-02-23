@@ -152,14 +152,12 @@ all: $(NAME)
 
 clean:
 	@echo "$(ORANGE)Cleaning up...$(RESET)"
-	@make -s clean -C $(EXTENDED_FT)
+	@make -s fclean -C $(EXTENDED_FT)
 	@make -s clean -C $(MINILIBX_PATH)
 	@echo "$(GREEN)Clean up successful$(RESET)"
 
-fclean: 
+fclean: clean
 	@echo "$(ORANGE)Full clean up...$(RESET)"
-	@make fclean -C $(EXTENDED_FT)
-	@make fclean -C $(MINILIBX_PATH)
 	@rm -f $(NAME)
 	@echo "$(GREEN)Full clean up successful$(RESET)"
 
