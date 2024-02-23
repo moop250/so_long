@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 11:19:52 by hlibine           #+#    #+#             */
-/*   Updated: 2024/02/22 14:10:24 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/02/23 16:14:24 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,11 @@
 # ifndef __APPLE__
 #  include "../libs/minilibx-linux/mlx.h"
 # endif
+
+typedef struct s_mlx
+{
+	void	*mlx;
+	void	*mlx_win;
+}	t_mlx;
 
 #endif

@@ -106,55 +106,62 @@ RM = rm -f
 
 MINILIBX_LINUX_PATH = libs/minilibx-linux/
 MINILIBX_MAC_PATH = libs/minilibx_opengl/
-MINILIBX_NAME = libmlx.a
-
-SRCS = srcs/so_long.c srcs \
+MINILIBX = libmlx.a
+MINILIBX_PATH =
 
 # Detect the OS
-OS := $(shell uname -s)
+OS = $(shell uname -s)
 
 ifeq ($(OS),Linux)
-	CFLAGS += -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
+	CFLAGS += -Lmlx_linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
 	MINILIBX_PATH = $(MINILIBX_LINUX_PATH)
 endif
 
 ifeq ($(OS),Darwin)
-	CFLAGS += -Lmlx -lmlx -framework OpenGL -framework AppKit
+	CFLAGS += -framework OpenGL -framework AppKit
 	MINILIBX_PATH = $(MINILIBX_MAC_PATH)
 endif
 
-MINILIBX = $(MINILIBX_PATH)$(MINILIBX_NAME)
+SRCS = srcs/so_long.c \
 
-EXTENDED_FT = srcs/extended_ft/
-INCLUDE = -L $(EXTENDED_FT) -lft
+MINILIBX := $(MINILIBX_PATH)$(MINILIBX)
 
-objs = $(SRCS:.c=.o)
+EXTENDED_FT = libs/extended_ft/
+EXFT_LIB = $(EXTENDED_FT:%=%libft.a)
 
-# Rules
-all: $(NAME)
-
-$(NAME): $(objs)
-		@echo "$(ORANGE)Compiling $(NAME)...$(RESET)"
-		@make -s -C $(EXTENDED_FT)
-		@$(CC) $(CFLAGS) -o $(NAME) $(objs) $(INCLUDE)
-		@echo "$(GREEN)$(NAME) built successfully!$(RESET)"
+#INCLUDE = -L $(EXTENDED_FT) -lft
 
 %.o: %.c
 	@printf "\t🤖 Compiling $<...\r"
 	@$(CC) $(CFLAGS) -c $< -o $@
 	@printf "\33[2K"
 
+$(NAME): $(SRCS) $(EXFT_LIB) $(MINILIBX)
+	@echo "$(ORANGE)Compiling $(NAME)...$(RESET)"
+	@$(CC) $(SRCS) $(EXFT_LIB) $(MINILIBX) $(CFLAGS) -o $(NAME)
+	@echo "$(GREEN)$(NAME) built successfully!$(RESET)"
+
+$(EXFT_LIB): $(EXTENDED_FT)makefile
+	@make -s -C $(EXTENDED_FT)
+
+$(MINILIBX): $(MINILIBX_PATH)Makefile
+	@make -s all -C $(MINILIBX_PATH) 
+
+# Rules
+all: $(NAME)
+
 clean:
-		@echo "$(ORANGE)Cleaning up...$(RESET)"
-		@make -s clean -C $(EXTENDED_FT)
-		@rm -f $(objs)
-		@echo "$(GREEN)Clean up successful$(RESET)"
+	@echo "$(ORANGE)Cleaning up...$(RESET)"
+	@make -s clean -C $(EXTENDED_FT)
+	@make -s clean -C $(MINILIBX_PATH)
+	@echo "$(GREEN)Clean up successful$(RESET)"
 
 fclean: 
-		@echo "$(ORANGE)Full clean up...$(RESET)"
-		@make fclean -C $(EXTENDED_FT)
-		@rm -f $(NAME)
-		@echo "$(GREEN)Full clean up successful$(RESET)"
+	@echo "$(ORANGE)Full clean up...$(RESET)"
+	@make fclean -C $(EXTENDED_FT)
+	@make fclean -C $(MINILIBX_PATH)
+	@rm -f $(NAME)
+	@echo "$(GREEN)Full clean up successful$(RESET)"
 
 re: fclean all
 
