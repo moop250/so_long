@@ -6,28 +6,28 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 11:19:56 by hlibine           #+#    #+#             */
-/*   Updated: 2024/02/23 15:41:05 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/02/23 17:29:05 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-t_mlx	*struct_init(void)
+void	sl_error(char *msg)
 {
-	t_mlx	*mlxlst;
-
-	mlxlst = galloc(sizeof(t_mlx));
-	mlxlst->mlx = mlx_init();
-	mlxlst->mlx_win = mlx_new_window(mlxlst->mlx, 1920, 1080, "so_long");
-	mlx_loop(mlxlst->mlx);
-	return (mlxlst);
+	ft_putstr_fd("so_long error: ", 2);
+	ft_putendl_fd(msg, 2);
+	razegarbage();
+	exit(EXIT_FAILURE);
 }
 
 //int ac, char const **av
 int	main(void)
 {
 	t_mlx	*mlxlst;
+	t_data	*img;
 
-	mlxlst = struct_init();
+	mlxlst = sl_mlx_init();
+	img.img = mlx_new_image(mlx, 1920, 1080);
+	razegarbage();`
 	return (0);
 }
