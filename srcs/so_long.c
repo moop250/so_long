@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 11:19:56 by hlibine           #+#    #+#             */
-/*   Updated: 2024/02/28 14:20:31 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/02/28 17:13:55 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,25 @@ void	sl_error(char *msg)
 	exit(EXIT_FAILURE);
 }
 
+int	sl_destroy(t_mlx *game)
+{
+	if (game)
+	{
+		if (game->mlx_win)
+			mlx_destroy_window(game->mlx, game->mlx_win);
+	}
+	exit(1);
+	return (1);
+}
+
+int	sl_keypress(int keycode, t_mlx *game)
+{
+	if(keycode == 53)
+		sl_destroy(game);
+	ft_putendl_fd(ft_itoa(keycode), 1);
+	return (1);
+}
+
 void	mlx_mpp(t_data *data, int x, int y, int color)
 {
 	char	*out;
@@ -31,13 +50,13 @@ void	mlx_mpp(t_data *data, int x, int y, int color)
 //int ac, char const **av
 int	main(void)
 {
-	t_mlx	*mlx;
+	t_mlx	*game;
 	t_data	*img;
 	int		i;
 	int		a;
 
-	mlx = sl_mlx_init();
-	img = sl_img_init(mlx->mlx);
+	game = sl_mlx_init();
+	img = sl_img_init(game->mlx);
 	i = 10;
 	a = 10;
 	while (++i < 90)
@@ -56,7 +75,8 @@ int	main(void)
 	{
 		mlx_mpp(img, i, a, 0x00FF0000);
 	}
-	mlx_put_image_to_window(mlx->mlx, mlx->mlx_win, img->img, 0, 0);
-	mlx_loop(mlx->mlx); //why tf error here???
-	//ft_putendl_fd("im here", 2);
+	mlx_put_image_to_window(game->mlx, game->mlx_win, img->img, 0, 0);
+	mlx_hook(game->mlx_win, ON_KEYDOWN, 1L << 0, sl_keypress, game);
+	mlx_hook(game->mlx_win, ON_DESTROY, 0, sl_destroy, game);
+	mlx_loop(game->mlx);
 }

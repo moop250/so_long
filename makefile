@@ -101,7 +101,7 @@ RESET = \033[0m
 
 NAME = so_long
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
 RM = rm -f
 
 MINILIBX_LINUX_PATH = libs/minilibx-linux/
