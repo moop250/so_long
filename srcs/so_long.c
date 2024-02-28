@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 11:19:56 by hlibine           #+#    #+#             */
-/*   Updated: 2024/02/28 17:13:55 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/02/28 18:13:55 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,15 @@ int	sl_keypress(int keycode, t_mlx *game)
 	return (1);
 }
 
+int	mousepos(int x, int y, t_mlx *game)
+{
+	if (game)
+		ft_putendl_fd("", 1);
+	ft_putendl_fd(ft_itoa(x), 1);
+	ft_putendl_fd(ft_itoa(y), 1);
+	return (1);
+}
+
 void	mlx_mpp(t_data *data, int x, int y, int color)
 {
 	char	*out;
@@ -47,35 +56,17 @@ void	mlx_mpp(t_data *data, int x, int y, int color)
 	*(unsigned int*)out = color;
 }
 
-//int ac, char const **av
-int	main(void)
+
+int	main(int ac, char const **av)
 {
 	t_mlx	*game;
-	t_data	*img;
-	int		i;
-	int		a;
 
+	if (ac > 2)
+		sl_error("too many args");
+	else if (ac != 2)
+		sl_error("not enough args");
 	game = sl_mlx_init();
-	img = sl_img_init(game->mlx);
-	i = 10;
-	a = 10;
-	while (++i < 90)
-	{
-		mlx_mpp(img, i, a, 0x00FF0000);
-	}
-	while (++a < 90)
-	{
-		mlx_mpp(img, i, a, 0x00FF0000);
-	}
-	while (--i > 10)
-	{
-		mlx_mpp(img, i, a, 0x00FF0000);
-	}
-	while (--a > 10)
-	{
-		mlx_mpp(img, i, a, 0x00FF0000);
-	}
-	mlx_put_image_to_window(game->mlx, game->mlx_win, img->img, 0, 0);
+	mlx_expose_hook(game->mlx_win, render_game, game);
 	mlx_hook(game->mlx_win, ON_KEYDOWN, 1L << 0, sl_keypress, game);
 	mlx_hook(game->mlx_win, ON_DESTROY, 0, sl_destroy, game);
 	mlx_loop(game->mlx);

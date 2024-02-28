@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 11:19:52 by hlibine           #+#    #+#             */
-/*   Updated: 2024/02/28 17:14:09 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/02/28 18:08:37 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,6 @@ typedef struct	s_data {
 t_mlx	*sl_mlx_init(void);
 t_data	*sl_img_init(void *mlx);
 void	sl_error(char *msg);
+int		render_game(t_mlx *game);
 
 #endif
