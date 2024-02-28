@@ -124,6 +124,8 @@ endif
 
 SRCS = srcs/so_long.c \
 
+SUPP = srcs/init_structs.c \
+
 MINILIBX := $(MINILIBX_PATH)$(MINILIBX)
 
 EXTENDED_FT = libs/extended_ft/
@@ -136,9 +138,9 @@ EXFT_LIB = $(EXTENDED_FT:%=%libft.a)
 	@$(CC) $(CFLAGS) -c $< -o $@
 	@printf "\33[2K"
 
-$(NAME): $(SRCS) $(EXFT_LIB) $(MINILIBX)
+$(NAME): $(SUPP) $(SRCS) $(EXFT_LIB) $(MINILIBX)
 	@echo "$(ORANGE)Compiling $(NAME)...$(RESET)"
-	@$(CC) $(SRCS) $(EXFT_LIB) $(MINILIBX) $(CFLAGS) -o $(NAME)
+	@$(CC) $(SUPP) $(SRCS) $(EXFT_LIB) $(MINILIBX) $(CFLAGS) -o $(NAME)
 	@echo "$(GREEN)$(NAME) built successfully!$(RESET)"
 
 $(EXFT_LIB): $(EXTENDED_FT)makefile
