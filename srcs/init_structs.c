@@ -6,19 +6,20 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 17:13:07 by hlibine           #+#    #+#             */
-/*   Updated: 2024/02/28 14:17:05 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/02/29 15:03:11 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-t_mlx	*sl_mlx_init(void)
+t_mlx	*sl_mlx_init(char *av)
 {
 	t_mlx	*mlx;
 
 	mlx = galloc(sizeof(t_mlx));
 	mlx->mlx = mlx_init();
 	mlx->mlx_win = mlx_new_window(mlx->mlx, WIDTH, HIGHT, "so_long");
+	mlx->map = map_init(av);
 	return (mlx);
 }
 

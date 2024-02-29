@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 16:13:53 by hlibine           #+#    #+#             */
-/*   Updated: 2024/02/09 15:18:38 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/02/29 15:27:26 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,6 @@ void		*galloc(size_t size);
 t_garbcol	*lastgarbage(t_garbcol *garb);
 void		razegarbage(void);
 void		gfree(void *address);
+char		*get_next_line(int fd);
 
 #endif
