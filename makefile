@@ -126,6 +126,7 @@ SRCS = srcs/so_long.c \
 
 SUPP = srcs/init_structs.c \
 		srcs/rendering.c \
+		srcs/map_parsing.c \
 
 MINILIBX := $(MINILIBX_PATH)$(MINILIBX)
 

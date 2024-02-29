@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 11:19:52 by hlibine           #+#    #+#             */
-/*   Updated: 2024/02/29 15:06:25 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/02/29 16:18:52 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <math.h>
 # include "../libs/extended_ft/srcs/extended_ft.h"
 # include <fcntl.h>
+# include <stdio.h>
 
 // Compatibilty stuff
 # ifdef __APPLE__
@@ -76,10 +77,10 @@ typedef struct	s_mlx
 }			t_mlx;
 
 // Custom functions
-t_mlx	*sl_mlx_init(char *av);
+t_mlx	*sl_mlx_init(const char *av);
 t_data	*sl_img_init(void *mlx);
 void	sl_error(char *msg);
 int		render_game(t_mlx *game);
-t_map	*map_init(char *av);
+t_map	*map_init(const char *av);
 
 #endif

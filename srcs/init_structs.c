@@ -6,13 +6,13 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 17:13:07 by hlibine           #+#    #+#             */
-/*   Updated: 2024/02/29 15:03:11 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/02/29 16:18:22 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-t_mlx	*sl_mlx_init(char *av)
+t_mlx	*sl_mlx_init(const char *av)
 {
 	t_mlx	*mlx;
 

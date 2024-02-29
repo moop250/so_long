@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 11:10:14 by hlibine           #+#    #+#             */
-/*   Updated: 2024/02/29 15:22:00 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/02/29 17:20:10 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	filewrk(int fd, char **clean)
 			break ;
 		buf[bytes_read] = '\0';
 		tmp = ft_strjoin(*clean, buf);
-		free(*clean);
+		gfree(*clean);
 		*clean = tmp;
 		if (!*clean)
 			break ;
@@ -75,7 +75,7 @@ char	*cleanup(char **clean, int i)
 	char	*tmp;
 	char	*out;
 
-	out = malloc(i * sizeof(char));
+	out = galloc(i * sizeof(char));
 	if (!out)
 		return (NULL);
 	i = ft_strlcpy(out, *clean, i);
@@ -85,12 +85,12 @@ char	*cleanup(char **clean, int i)
 		tmp = ft_strdup(*clean + len + 1);
 		if (!tmp)
 			return (NULL);
-		free(*clean);
+		gfree(*clean);
 		*clean = tmp;
 	}
 	else
 	{
-		free(*clean);
+		gfree(*clean);
 		*clean = NULL;
 	}
 	return (out);
@@ -104,14 +104,14 @@ char	*get_next_line(int fd)
 
 	if (read(fd, NULL, 0) < 0)
 	{
-		free(clean);
+		gfree(clean);
 		clean = 0;
 		return (NULL);
 	}
 	filewrk(fd, &clean);
 	if (!clean || *clean == '\0')
 	{
-		free(clean);
+		gfree(clean);
 		clean = NULL;
 		return (NULL);
 	}

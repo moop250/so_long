@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 11:19:56 by hlibine           #+#    #+#             */
-/*   Updated: 2024/02/29 14:59:28 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/02/29 16:34:58 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ void	mlx_mpp(t_data *data, int x, int y, int color)
 int	main(int ac, char const **av)
 {
 	t_mlx	*game;
-	const char *tmp;
 
 	if (ac > 2)
 		sl_error("too many args");
