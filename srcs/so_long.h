@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 11:19:52 by hlibine           #+#    #+#             */
-/*   Updated: 2024/02/29 16:18:52 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/02/29 18:55:01 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,12 @@
 # endif
 
 // Resolution defaults
+
 # define WIDTH 1920
 # define HIGHT 1080
 
 // X11 events
+
 enum {
 	ON_KEYDOWN = 2,
 	ON_KEYUP = 3,
@@ -77,6 +79,7 @@ typedef struct	s_mlx
 }			t_mlx;
 
 // Custom functions
+
 t_mlx	*sl_mlx_init(const char *av);
 t_data	*sl_img_init(void *mlx);
 void	sl_error(char *msg);

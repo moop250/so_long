@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 17:13:07 by hlibine           #+#    #+#             */
-/*   Updated: 2024/02/29 16:18:22 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/02/29 18:52:58 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ t_mlx	*sl_mlx_init(const char *av)
 	t_mlx	*mlx;
 
 	mlx = galloc(sizeof(t_mlx));
+	mlx->map = map_init(av);
 	mlx->mlx = mlx_init();
 	mlx->mlx_win = mlx_new_window(mlx->mlx, WIDTH, HIGHT, "so_long");
-	mlx->map = map_init(av);
 	return (mlx);
 }
 

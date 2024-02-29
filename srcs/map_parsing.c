@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 14:58:18 by hlibine           #+#    #+#             */
-/*   Updated: 2024/02/29 17:22:34 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/02/29 18:38:01 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,18 @@ void	mapchecker(t_map *map)
 	while (map->data[++i])
 		if (ft_strlen(map->data[i]) != map->width)
 			sl_error("map not rectangular");
+	i = -1;
+	while (map->data[0][++i])
+		if (map->data[0][i] != '1')
+			sl_error("invaild map");
+	i = 0;
+	while (++i < map->length)
+		if (map->data[i][0] != '1' || map->data[i][map->width - 1] != '1')
+			sl_error("invaild map");
+	i = 0;
+	while (map->data[map->length - 1][++i])
+		if (map->data[map->length - 1][i] != '1')
+			sl_error("invaild map");
 }
 
 char	**map_parser(const char *av)

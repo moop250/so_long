@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 11:19:56 by hlibine           #+#    #+#             */
-/*   Updated: 2024/02/29 16:34:58 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/02/29 18:51:58 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	sl_destroy(t_mlx *game)
 
 int	sl_keypress(int keycode, t_mlx *game)
 {
-	if(keycode == 53)
+	if(keycode == 53 || keycode == 65307)
 		sl_destroy(game);
 	ft_putendl_fd(ft_itoa(keycode), 1);
 	return (1);

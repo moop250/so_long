@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 11:10:14 by hlibine           #+#    #+#             */
-/*   Updated: 2024/02/29 17:20:10 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/02/29 18:37:21 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	search(char *buf, int c)
 	{
 		if (buf[c + i] == '\n')
 			return (c + i);
-			i++;
+		i++;
 	}
 	return (0);
 }
