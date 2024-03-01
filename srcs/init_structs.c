@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 17:13:07 by hlibine           #+#    #+#             */
-/*   Updated: 2024/02/29 18:52:58 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/01 13:44:10 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ t_mlx	*sl_mlx_init(const char *av)
 
 t_data	*sl_img_init(void *mlx)
 {
-	t_data *img;
+	t_data	*img;
 
 	img = galloc(sizeof(t_data));
 	img->img = mlx_new_image(mlx, WIDTH, HIGHT);
 	img->addr = mlx_get_data_addr(img->img, &img->bits_per_pixel,
-		&img->line_length, &img->endian);
+			&img->line_length, &img->endian);
 	return (img);
 }

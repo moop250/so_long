@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 11:19:52 by hlibine           #+#    #+#             */
-/*   Updated: 2024/02/29 18:55:01 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/01 13:48:38 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ typedef struct s_pos
 	int	pos_y;
 }		t_pos;
 
-typedef struct	s_map
+typedef struct s_map
 {
 	char	**data;
 	int		score_needed;
@@ -62,7 +62,7 @@ typedef struct	s_map
 	t_pos	exit;
 }			t_map;
 
-typedef struct	s_data
+typedef struct s_data
 {
 	void	*img;
 	char	*addr;
@@ -71,7 +71,7 @@ typedef struct	s_data
 	int		endian;
 }			t_data;
 
-typedef struct	s_mlx
+typedef struct s_mlx
 {
 	void	*mlx;
 	void	*mlx_win;

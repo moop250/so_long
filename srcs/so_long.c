@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 11:19:56 by hlibine           #+#    #+#             */
-/*   Updated: 2024/02/29 18:51:58 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/01 13:48:18 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,18 +33,9 @@ int	sl_destroy(t_mlx *game)
 
 int	sl_keypress(int keycode, t_mlx *game)
 {
-	if(keycode == 53 || keycode == 65307)
+	if (keycode == 53 || keycode == 65307)
 		sl_destroy(game);
 	ft_putendl_fd(ft_itoa(keycode), 1);
-	return (1);
-}
-
-int	mousepos(int x, int y, t_mlx *game)
-{
-	if (game)
-		ft_putendl_fd("", 1);
-	ft_putendl_fd(ft_itoa(x), 1);
-	ft_putendl_fd(ft_itoa(y), 1);
 	return (1);
 }
 
@@ -53,9 +44,8 @@ void	mlx_mpp(t_data *data, int x, int y, int color)
 	char	*out;
 
 	out = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
-	*(unsigned int*)out = color;
+	*(unsigned int *)out = color;
 }
-
 
 int	main(int ac, char const **av)
 {
