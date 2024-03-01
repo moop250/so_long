@@ -6,11 +6,39 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 14:58:18 by hlibine           #+#    #+#             */
-/*   Updated: 2024/02/29 18:38:01 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/01 13:34:08 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+void	ent_parser(t_map *map)
+{
+	int	i;
+	int	a;
+	int	ents[3];
+
+	i = 0;
+	ents[0] = 0;
+	ents[1] = 0;
+	ents[2] = 0;
+	while (map->data[++i])
+	{
+		a = -1;
+		while (map->data[i][++a])
+		{
+			if (map->data[i][a] == 'C')
+				++ents[0];
+			else if (map->data[i][a] == 'E')
+				++ents[1];
+			else if (map->data[i][a] == 'P')
+				++ents[2];
+		}
+	}
+	if (ents[0] < 1 || ents[1] != 1 || ents[2] != 1)
+		sl_error("invalid map");
+	map->score_needed = ents[0];
+}
 
 void	checkname(const char *av)
 {
@@ -32,16 +60,17 @@ void	mapchecker(t_map *map)
 			sl_error("map not rectangular");
 	i = -1;
 	while (map->data[0][++i])
+	{
 		if (map->data[0][i] != '1')
 			sl_error("invaild map");
+		if (map->data[map->length - 1][i] != '1')
+			sl_error("invaild map");
+	}
 	i = 0;
 	while (++i < map->length)
 		if (map->data[i][0] != '1' || map->data[i][map->width - 1] != '1')
 			sl_error("invaild map");
-	i = 0;
-	while (map->data[map->length - 1][++i])
-		if (map->data[map->length - 1][i] != '1')
-			sl_error("invaild map");
+	ent_parser(map);
 }
 
 char	**map_parser(const char *av)
