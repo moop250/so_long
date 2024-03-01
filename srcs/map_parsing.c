@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 14:58:18 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/01 13:34:08 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/01 17:28:04 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ void	mapchecker(t_map *map)
 		if (map->data[i][0] != '1' || map->data[i][map->width - 1] != '1')
 			sl_error("invaild map");
 	ent_parser(map);
+	check_path(map);
 }
 
 char	**map_parser(const char *av)

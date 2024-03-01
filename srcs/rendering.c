@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 18:05:56 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/01 13:47:16 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/01 14:58:34 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,8 @@ void	sl_put_pixel(t_data *data, int x, int y, int color)
 
 int	render_game(t_mlx *game)
 {
-	t_data	*img;
+	int len;
 
-	img = sl_img_init(game->mlx);
-	sl_put_pixel(img, 10, 10, 0x00FF0000);
-	mlx_put_image_to_window(game->mlx, game->mlx_win, img->img, 0, 0);
+	len = game->map->length;
 	return (1);
 }

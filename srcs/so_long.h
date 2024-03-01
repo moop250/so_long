@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 11:19:52 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/01 13:48:38 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/01 17:02:59 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,9 +81,9 @@ typedef struct s_mlx
 // Custom functions
 
 t_mlx	*sl_mlx_init(const char *av);
-t_data	*sl_img_init(void *mlx);
 void	sl_error(char *msg);
 int		render_game(t_mlx *game);
 t_map	*map_init(const char *av);
+void	check_path(t_map *map)
 
 #endif
