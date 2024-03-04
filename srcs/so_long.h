@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 11:19:52 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/04 14:59:22 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/04 15:50:33 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,13 @@ typedef struct s_pos
 	int	y;
 }		t_pos;
 
+typedef struct s_player
+{
+	t_pos	*pos;
+	int		moves;
+	int		score;
+}			t_player;
+
 typedef struct s_map
 {
 	char	**data;
@@ -75,11 +82,10 @@ typedef struct s_data
 
 typedef struct s_mlx
 {
-	void	*mlx;
-	void	*mlx_win;
-	t_map	*map;
-	t_pos	*player;
-	int		moves;
+	void		*mlx;
+	void		*mlx_win;
+	t_map		*map;
+	t_player	*player;
 }			t_mlx;
 
 // Custom functions
@@ -89,6 +95,6 @@ void	sl_error(char *msg);
 int		render_game(t_mlx *game);
 t_map	*map_init(const char *av);
 void	check_path(t_map *map);
-int		sl_movedir(t_mlx *game, int direction, int count);
+int		sl_movedir(char **data, t_player *player, int direction, int count);
 
 #endif

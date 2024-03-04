@@ -6,26 +6,26 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 10:22:39 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/04 15:16:20 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/04 15:45:39 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	sl_movedir(t_mlx *game, int direction, int count)
+int	sl_movedir(char **data, t_player *player, int direction, int count)
 {
 	if (direction == UP
-			&& (game->map->data[game->player->y - 1][game->player->x] != '1'))
-		game->player->y--;
+			&& (data[player->pos->y - 1][player->pos->x] != '1'))
+		player->pos->y--;
 	else if (direction == LEFT
-			&& (game->map->data[game->player->y][game->player->x - 1] != '1'))
-		game->player->x--;
+			&& (data[player->pos->y][player->pos->x - 1] != '1'))
+		player->pos->x--;
 	else if (direction == DOWN
-			&& (game->map->data[game->player->y + 1][game->player->x] != '1'))
-		game->player->y++;
+			&& (data[player->pos->y + 1][player->pos->x] != '1'))
+		player->pos->y++;
 	else if (direction == RIGHT
-			&& (game->map->data[game->player->y][game->player->x + 1] != '1'))
-		game->player->x++;
+			&& (data[player->pos->y][player->pos->x + 1] != '1'))
+		player->pos->x++;
 	else
 		return (count);
 	return (++count);

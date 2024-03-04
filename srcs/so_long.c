@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 11:19:56 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/04 15:01:50 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/04 16:01:35 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,18 +33,24 @@ int	sl_destroy(t_mlx *game)
 
 int	sl_keypress(int keycode, t_mlx *game)
 {
+	int			mvs;
+	t_player	*player;
+
+	player = game->player;
+	mvs = player->moves;
 	if (keycode == 53 || keycode == 65307)
 		sl_destroy(game);
 	else if (keycode == 119)
-		game->moves = sl_movedir(game, UP, game->moves);
+		player->moves = sl_movedir(game->map->data, game->player, UP, mvs);
 	else if (keycode == 97)
-		game->moves = sl_movedir(game, LEFT, game->moves);
+		player->moves = sl_movedir(game->map->data, game->player, LEFT, mvs);
 	else if (keycode == 115)
-		game->moves = sl_movedir(game, DOWN, game->moves);
+		player->moves = sl_movedir(game->map->data, game->player, DOWN, mvs);
 	else if (keycode == 100)
-		game->moves = sl_movedir (game, RIGHT, game->moves);
+		player->moves = sl_movedir (game->map->data, game->player, RIGHT, mvs);
 	ft_putendl_fd(ft_itoa(keycode), 1);
-	ft_putendl_fd(ft_itoa(game->moves), 1);
+	ft_putstr_fd("moves: ", 1);
+	ft_putendl_fd(ft_itoa(game->+player->moves), 1);
 	return (1);
 }
 
