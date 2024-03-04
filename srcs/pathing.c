@@ -6,15 +6,25 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 15:58:59 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/01 17:37:16 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/04 11:02:41 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	dfs(char *map, )
+int	dfs(t_map *map, char **tmp_map, t_pos *search, t_pos *exit)
 {
-	 
+	if (search->x < 0 || search->y < 0 ||
+			search->x > map->width || search->y > map->length
+			|| tmp_map[search->x][search->y] == 1)
+		return (-1);
+	if ((search->x == exit->x && search->y == exit->y)
+			|| (search->x == exit->x && search->y + 1 == exit->y)
+			|| (search->x == exit->x && search->y - 1 == exit->y)
+			|| (search->x + 1 == exit->x && search->y == exit->y)
+			|| (search->x - 1 == exit->x && search->y == exit->y))
+		return (1);
+	tmp_map[search->x][search->y] = 1;
 }
 
 set_ents(t_map *map)
@@ -33,13 +43,13 @@ set_ents(t_map *map)
 		{
 			if (map->data[i[0]][i[1]] == 'P')
 			{
-				spawn->pos_x = i[0];
-				spawn->pos_y = i[1];
+				spawn->x = i[0];
+				spawn->y = i[1];
 			}
 			else if (map->data[i[0]][i[1]] == 'E')
 			{
-				exit->pos_x = i[0];
-				exit->pos_y = i[1];
+				exit->x = i[0];
+				exit->y = i[1];
 			}
 		}
 	}
@@ -75,5 +85,5 @@ void	check_path(t_map *map)
 
 	set_ents(map);
 	map2 = mapdup(map->data);
-	dfs(map, map2, );
+	dfs(map, map2, map->spawn, map->exit);
 }

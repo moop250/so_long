@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 11:19:52 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/01 17:02:59 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/04 10:42:27 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ enum {
 
 typedef struct s_pos
 {
-	int	pos_x;
-	int	pos_y;
+	int	x;
+	int	y;
 }		t_pos;
 
 typedef struct s_map
@@ -58,8 +58,8 @@ typedef struct s_map
 	int		score_needed;
 	int		length;
 	int		width;
-	t_pos	spawn;
-	t_pos	exit;
+	t_pos	*spawn;
+	t_pos	*exit;
 }			t_map;
 
 typedef struct s_data
@@ -76,6 +76,7 @@ typedef struct s_mlx
 	void	*mlx;
 	void	*mlx_win;
 	t_map	*map;
+	t_pos	*player;
 }			t_mlx;
 
 // Custom functions
