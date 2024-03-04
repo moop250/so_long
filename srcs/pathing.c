@@ -6,28 +6,42 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 15:58:59 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/04 11:02:41 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/04 12:48:31 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	dfs(t_map *map, char **tmp_map, t_pos *search, t_pos *exit)
+int	dfs(t_map *map, char **tmp_map, t_pos search, t_pos out)
 {
-	if (search->x < 0 || search->y < 0 ||
-			search->x > map->width || search->y > map->length
-			|| tmp_map[search->x][search->y] == 1)
+	if (search.x < 0 || search.y < 0 ||
+			search.x > map->width || search.y > map->length
+			|| tmp_map[search.x][search.y] == 1)
 		return (-1);
-	if ((search->x == exit->x && search->y == exit->y)
-			|| (search->x == exit->x && search->y + 1 == exit->y)
-			|| (search->x == exit->x && search->y - 1 == exit->y)
-			|| (search->x + 1 == exit->x && search->y == exit->y)
-			|| (search->x - 1 == exit->x && search->y == exit->y))
-		return (1);
-	tmp_map[search->x][search->y] = 1;
+	if ((search.x == out.x && search.y == out.y)
+			|| (search.x == out.x && search.y + 1 == out.y)
+			|| (search.x == out.x && search.y - 1 == out.y)
+			|| (search.x + 1 == out.x && search.y == out.y)
+			|| (search.x - 1 == out.x && search.y == out.y))
+		return (5);
+	tmp_map[search.x][search.y] = 1;
+	search.x++;
+	if (dfs(map, tmp_map, search, out) >= 0)
+		return (RIGHT);
+	search.x -= 2;
+	if (dfs(map, tmp_map, search, out) >= 0)
+		return (LEFT);
+	search.x++;
+	search.y++;
+	if(dfs(map, tmp_map, search, out) >= 0)
+		return (UP);
+	search.y -= 2;
+	if (dfs(map, tmp_map, search, out) >= 0)
+		return (DOWN);
+	return (-1);
 }
 
-set_ents(t_map *map)
+void	set_ents(t_map *map)
 {
 	t_pos	*spawn;
 	t_pos	*exit;
@@ -57,7 +71,7 @@ set_ents(t_map *map)
 	map->exit = exit;
 }
 
-char	*mapdup(char **data)
+char	**mapdup(char **data)
 {
 	char	**map;
 	int		i;
@@ -73,7 +87,7 @@ char	*mapdup(char **data)
 	while (++a < i)
 	{
 		map[a] = galloc(len * sizeof(char));
-		map[a] = ft_strlcpy(map[a], data[a], len);
+		ft_strlcpy(map[a], data[a], len);
 	}
 	map[i] = NULL;
 	return (map);
@@ -81,9 +95,14 @@ char	*mapdup(char **data)
 
 void	check_path(t_map *map)
 {
-	char	*map2;
+	char	**map2;
+	t_pos	spawn;
+	t_pos	out;
 
+	spawn = *map->spawn;
+	out = *map->exit;
 	set_ents(map);
 	map2 = mapdup(map->data);
-	dfs(map, map2, map->spawn, map->exit);
+	if (dfs(map, map2, spawn, out) < 0)
+		sl_error("pathing error: no path found");
 }

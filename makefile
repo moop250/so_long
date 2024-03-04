@@ -127,6 +127,7 @@ SRCS = srcs/so_long.c \
 SUPP = srcs/init_structs.c \
 		srcs/rendering.c \
 		srcs/map_parsing.c \
+		srcs/pathing.c
 
 MINILIBX := $(MINILIBX_PATH)$(MINILIBX)
 
@@ -136,7 +137,7 @@ EXFT_LIB = $(EXTENDED_FT:%=%libft.a)
 #INCLUDE = -L $(EXTENDED_FT) -lft
 
 %.o: %.c
-	@printf "\t🤖 Compiling $<...\r"
+	@printf "\tCompiling $<...\r"
 	@$(CC) $(CFLAGS) -c $< -o $@
 	@printf "\33[2K"
 

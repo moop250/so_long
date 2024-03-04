@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 11:19:52 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/04 10:42:27 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/04 12:12:58 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,12 @@
 #  include "../libs/minilibx-linux/mlx.h"
 # endif
 
-// Resolution defaults
+// Directions
 
-# define WIDTH 1920
-# define HIGHT 1080
+# define LEFT 0
+# define DOWN 1
+# define RIGHT 2
+# define UP 3
 
 // X11 events
 
@@ -85,6 +87,6 @@ t_mlx	*sl_mlx_init(const char *av);
 void	sl_error(char *msg);
 int		render_game(t_mlx *game);
 t_map	*map_init(const char *av);
-void	check_path(t_map *map)
+void	check_path(t_map *map);
 
 #endif
