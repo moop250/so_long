@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 11:19:56 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/01 13:48:18 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/04 15:01:50 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,16 @@ int	sl_keypress(int keycode, t_mlx *game)
 {
 	if (keycode == 53 || keycode == 65307)
 		sl_destroy(game);
+	else if (keycode == 119)
+		game->moves = sl_movedir(game, UP, game->moves);
+	else if (keycode == 97)
+		game->moves = sl_movedir(game, LEFT, game->moves);
+	else if (keycode == 115)
+		game->moves = sl_movedir(game, DOWN, game->moves);
+	else if (keycode == 100)
+		game->moves = sl_movedir (game, RIGHT, game->moves);
 	ft_putendl_fd(ft_itoa(keycode), 1);
+	ft_putendl_fd(ft_itoa(game->moves), 1);
 	return (1);
 }
 
