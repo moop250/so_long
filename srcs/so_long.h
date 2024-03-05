@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 11:19:52 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/04 15:50:33 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/05 10:23:29 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ typedef struct s_player
 typedef struct s_map
 {
 	char	**data;
+	char	**ent_map;
 	int		score_needed;
 	int		length;
 	int		width;
@@ -96,5 +97,8 @@ int		render_game(t_mlx *game);
 t_map	*map_init(const char *av);
 void	check_path(t_map *map);
 int		sl_movedir(char **data, t_player *player, int direction, int count);
+void	sl_collect_point(t_mlx *game);
+char	**mapdup(char **data);
+void	sl_collect_point(t_mlx *game);
 
 #endif

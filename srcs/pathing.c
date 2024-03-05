@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 15:58:59 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/04 14:29:42 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/05 10:03:31 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,4 +105,5 @@ void	check_path(t_map *map)
 	map2 = mapdup(map->data);
 	if (dfs(map, map2, spawn, out) < 0)
 		sl_error("pathing error: no path found");
+	gfree(map2);
 }
