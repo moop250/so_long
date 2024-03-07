@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 11:19:56 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/05 10:43:32 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/05 12:26:20 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,8 @@ int	sl_keypress(int keycode, t_mlx *game)
 		player->moves = sl_movedir(game->map->data, game->player, DOWN, mvs);
 	else if (keycode == 100)
 		player->moves = sl_movedir (game->map->data, game->player, RIGHT, mvs);
-	sl_collect_point(game);
+	sl_ent_interact(game);
 	ft_putendl_fd(ft_itoa(keycode), 2);
-	ft_putendl_fd(ft_itoa(game->player->score), 2);
 	ft_putstr_fd("moves: ", 1);
 	ft_putendl_fd(ft_itoa(game->player->moves), 1);
 	return (1);
