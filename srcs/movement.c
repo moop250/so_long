@@ -6,18 +6,26 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 10:22:39 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/07 13:19:28 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/07 13:43:12 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	sl_collect_point(t_mlx *game)
+void	sl_ent_interact(t_mlx *game)
 {
-	if (game->map->ent_map[game->player->pos->y][game->player->pos->x] == 'C')
+	char	coord;
+
+	coord = game->map->ent_map[game->player->pos->y][game->player->pos->x];
+	if (coord == 'C')
 	{
 		game->map->ent_map[game->player->pos->y][game->player->pos->x] = '0';
 		game->player->score++;
+	}
+	else if (coord == 'E' && game->player->score == game->map->score_needed)
+	{
+		mlx_destroy_window(game->mlx, game->mlx_win);
+		exit(1);
 	}
 }
 
