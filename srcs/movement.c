@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 10:22:39 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/05 10:36:38 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/07 13:19:28 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ int	sl_movedir(char **data, t_player *player, int direction, int count)
 		player->pos->x++;
 	else
 		return (count);
+	player->direction = direction;
 	return (++count);
 }

@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 11:19:52 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/05 10:23:29 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/07 13:18:33 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ typedef struct s_player
 	t_pos	*pos;
 	int		moves;
 	int		score;
+	int		direction;
 }			t_player;
 
 typedef struct s_map
