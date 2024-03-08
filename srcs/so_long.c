@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 11:19:56 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/07 13:43:38 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/08 11:28:06 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,25 +33,22 @@ int	sl_destroy(t_mlx *game)
 
 int	sl_keypress(int keycode, t_mlx *game)
 {
-	int			mvs;
 	t_player	*player;
 
 	player = game->player;
-	mvs = player->moves;
 	if (keycode == 53 || keycode == 65307)
 		sl_destroy(game);
-	else if (keycode == 119)
-		player->moves = sl_movedir(game->map->data, game->player, UP, mvs);
-	else if (keycode == 97)
-		player->moves = sl_movedir(game->map->data, game->player, LEFT, mvs);
-	else if (keycode == 115)
-		player->moves = sl_movedir(game->map->data, game->player, DOWN, mvs);
-	else if (keycode == 100)
-		player->moves = sl_movedir (game->map->data, game->player, RIGHT, mvs);
+	else if (keycode == 13 || keycode == 119)
+		player->direction = UP;
+	else if (keycode == 0 || keycode == 97)
+		player->direction = LEFT;
+	else if (keycode == 1 || keycode == 115)
+		player->direction = DOWN;
+	else if (keycode == 2 || keycode == 100)
+		player->direction = RIGHT;
+	sl_movedir (game->map->data, game->player, player->direction);
 	sl_ent_interact(game);
 	ft_putendl_fd(ft_itoa(keycode), 2);
-	ft_putstr_fd("moves: ", 1);
-	ft_putendl_fd(ft_itoa(game->player->moves), 1);
 	render_game(game);
 	return (1);
 }

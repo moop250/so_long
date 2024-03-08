@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 10:22:39 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/07 13:43:12 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/08 11:34:41 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,22 +29,26 @@ void	sl_ent_interact(t_mlx *game)
 	}
 }
 
-int	sl_movedir(char **data, t_player *player, int direction, int count)
+void	sl_movedir(char **data, t_player *player, int dir)
 {
-	if (direction == UP
-			&& (data[player->pos->y - 1][player->pos->x] != '1'))
+	int	canmove;
+	
+	canmove = 1;
+	if (dir == UP && (data[player->pos->y - 1][player->pos->x] != '1'))
 		player->pos->y--;
-	else if (direction == LEFT
-			&& (data[player->pos->y][player->pos->x - 1] != '1'))
+	else if (dir == LEFT && (data[player->pos->y][player->pos->x - 1] != '1'))
 		player->pos->x--;
-	else if (direction == DOWN
-			&& (data[player->pos->y + 1][player->pos->x] != '1'))
+	else if (dir == DOWN && (data[player->pos->y + 1][player->pos->x] != '1'))
 		player->pos->y++;
-	else if (direction == RIGHT
-			&& (data[player->pos->y][player->pos->x + 1] != '1'))
+	else if (dir == RIGHT && (data[player->pos->y][player->pos->x + 1] != '1'))
 		player->pos->x++;
 	else
-		return (count);
-	player->direction = direction;
-	return (++count);
+		canmove = 0;
+	if (canmove)
+	{
+		player->direction = dir;
+		++player->moves;
+		ft_putstr_fd("moves: ", 1);
+		ft_putendl_fd(ft_itoa(player->moves), 1);
+	}
 }

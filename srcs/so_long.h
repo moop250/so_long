@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 11:19:52 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/07 13:44:14 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/08 11:27:52 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ void	sl_error(char *msg);
 int		render_game(t_mlx *game);
 t_map	*map_init(const char *av);
 void	check_path(t_map *map);
-int		sl_movedir(char **data, t_player *player, int direction, int count);
+void	sl_movedir(char **data, t_player *player, int dir);
 void	sl_ent_interact(t_mlx *game);
 char	**mapdup(char **data);
 
