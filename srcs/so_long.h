@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 11:19:52 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/08 11:27:52 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/08 15:18:16 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,14 @@
 # ifndef __APPLE__
 #  include "../libs/minilibx-linux/mlx.h"
 # endif
+
+// Rendering stuff
+
+# define SCALE 50
+
+// Img Directories
+
+#define MAP_TEXTURES "../map_textures"
 
 // Directions
 
@@ -87,6 +95,7 @@ typedef struct s_mlx
 	void		*mlx;
 	void		*mlx_win;
 	t_map		*map;
+	char 		*map_name;
 	t_player	*player;
 }			t_mlx;
 
@@ -94,6 +103,7 @@ typedef struct s_mlx
 
 t_mlx	*sl_mlx_init(const char *av);
 void	sl_error(char *msg);
+int		expose_render(t_mlx *game);
 int		render_game(t_mlx *game);
 t_map	*map_init(const char *av);
 void	check_path(t_map *map);

@@ -6,33 +6,75 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 18:05:56 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/04 12:46:07 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/08 16:18:26 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-/* void	sl_put_pixel(t_data *data, int x, int y, int color)
+void	put_image(t_mlx *game, void *img, int x, int y)
 {
-	char	*pxl;
-
-	if (x >= 0 && x < WIDTH && y >= 0 && y < HIGHT)
-	{
-		pxl = data->addr + (y * data->line_length + x
-				* (data->bits_per_pixel / 8));
-		*(unsigned int *)pxl = color;
-	}
-} */
-
-// void	render_next(t_mlx, )
-// { 
-// }
+	mlx_put_image_to_window(game->mlx , game->mlx_win, img, x * SCALE, y * SCALE);
+}
 
 int	render_game(t_mlx *game)
 {
-	int len;
+	int	x;
+	int	y;
+	int	dir;
 
-	len = game->map->length;
-	len++;
-	return (1);
+	x = game->player->pos->x;
+	y = game->player->pos->y;
+	dir = game->player->direction;
+	put_image(game, img.sprite, x, y);
+	if (dir == UP)
+		y += 1;
+	else if (dir == LEFT)
+		x += 1;
+	else if (dir == DOWN)
+		y -= 1;
+	else
+		x -= 1;
+	put_image(game, img.floor, x, y);
+}
+
+void	put_points(t_mlx *game)
+{
+	int	x;
+	int	y;
+
+	
+	y = -1;
+	while (game->map->ent_map[++y])
+	{
+		x = -1;
+		while (game->map->ent_map[y][++x])
+		{
+			if (game->map->ent_map[y][x] == 'P')
+				put_image(game, img.point, x, y);
+		}
+	}
+}
+
+int	expose_render(t_mlx *game)
+{
+	int	x;
+	int	y;
+
+	
+	y = -1;
+	while (game->map->data[++y])
+	{
+		x = -1;
+		while (game->map->data[y][++x])
+		{
+			if (game->map->data[y][x] == '1')
+				put_image(game, img.wall, x, y);
+			else if (game->map->data[y][x] == 'E')
+				put_image(game, img.exit, x, y);
+			else
+				put_image(game, img.floor, x, y);
+		}
+	}
+	put_points(game);
 }
