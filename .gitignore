@@ -2,3 +2,4 @@ libs/minilibx-linux/Makefile.gen
 libs/minilibx-linux/test/Makefile.gen
 so_long.dSYM/Contents/Resources/DWARF/so_long
 so_long.dSYM/Contents/Info.plist
+.DS_Store
