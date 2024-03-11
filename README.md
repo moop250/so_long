@@ -26,6 +26,11 @@ The bonus part of pipex enhances the basic functionality with the following feat
 
 ![](https://img.shields.io/github/languages/code-size/hlibine/so_long?color=5BCFFF)
 
+## Credits
+
+- Key by [karsiori](https://karsiori.itch.io/)
+- Slime by [Warsvault](https://warsvault.itch.io/)
+
 ## Usage 
 
 To clone the repository use:
