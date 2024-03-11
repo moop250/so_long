@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 11:57:49 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/11 15:09:11 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/11 17:47:39 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,14 @@ void	set_textures(t_mlx *game, t_map *map)
 	gfree(tmp);
 }
 
-/* void	set_sprites(t_mlx *game)
+void	set_sprites(t_mlx *game)
 {
-	//
-} */
+	char		*tmp;
+	t_player	*player;
+	
+	player = game->player;
+	tmp = ft_strjoin(SPRITES, "player_1.xpm");
+	player->sprite.img = mlx_xpm_file_to_image(game->mlx, tmp,
+		&player->sprite.width, &player->sprite.hight);
+	gfree(tmp);
+}

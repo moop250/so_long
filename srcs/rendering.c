@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 18:05:56 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/11 15:31:55 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/11 16:35:06 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,17 @@
 
 void	put_image(t_mlx *game, void *img, int x, int y)
 {
-	mlx_put_image_to_window(game->mlx , game->mlx_win, img, x * SCALE, y * SCALE);
+	if (x == game->map->exit->x && y == game->map->exit->y)
+		mlx_put_image_to_window(game->mlx , game->mlx_win, game->map->end.img,
+			x * SCALE, y * SCALE);
+	else
+		mlx_put_image_to_window(game->mlx , game->mlx_win, img, x * SCALE, y * SCALE);
+}
+
+void	put_player(t_mlx *game, t_player *player)
+{
+	mlx_put_image_to_window(game->mlx , game->mlx_win, player->sprite.img,
+		player->pos->x * SCALE, player->pos->y * SCALE);
 }
 
 void	render_game(t_mlx *game)
@@ -27,7 +37,7 @@ void	render_game(t_mlx *game)
 	y = game->player->pos->y;
 	dir = game->player->direction;
 	put_image(game, game->map->floor.img, x, y);
-	//put_image(game, img.sprite, x, y);
+	put_player(game, game->player);
 	if (dir == UP)
 		y += 1;
 	else if (dir == LEFT)
@@ -76,5 +86,6 @@ int	expose_render(t_mlx *game)
 		}
 	}
 	put_points(game);
+	put_player(game, game->player);
 	return (1);
 }

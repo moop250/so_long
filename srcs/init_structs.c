@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 17:13:07 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/11 15:27:14 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/11 16:34:27 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ t_mlx	*sl_mlx_init(const char *av)
 	initplayer(mlx);
 	mlx->mlx = mlx_init();
 	set_textures(mlx, mlx->map);
+	set_sprites(mlx);
 	mlx->mlx_win = mlx_new_window(mlx->mlx, mlx->map->width * SCALE,
 			mlx->map->length * SCALE, tmp);
 	return (mlx);

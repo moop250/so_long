@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 11:19:52 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/11 15:00:19 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/11 16:34:06 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@
 
 // Img Directories
 
-#define MAP_TEXTURES "map_textures/"
+# define MAP_TEXTURES "map_textures/"
+# define SPRITES "player_sprites/"
 
 // Directions
 
@@ -63,20 +64,21 @@ typedef struct s_pos
 	int	y;
 }		t_pos;
 
-typedef struct s_player
-{
-	t_pos	*pos;
-	int		moves;
-	int		score;
-	int		direction;
-}			t_player;
-
 typedef struct s_xpm
 {
 	void	*img;
 	int		width;
 	int		hight;
 }			t_xmp;
+
+typedef struct s_player
+{
+	t_pos	*pos;
+	int		moves;
+	int		score;
+	int		direction;
+	t_xmp	sprite;
+}			t_player;
 
 typedef struct s_map
 {
@@ -123,5 +125,6 @@ void	sl_movedir(t_mlx *game, char **data, t_player *player, int dir);
 void	sl_ent_interact(t_mlx *game);
 char	**mapdup(char **data);
 void	set_textures(t_mlx *game, t_map *map);
+void	set_sprites(t_mlx *game);
 
 #endif
