@@ -6,7 +6,7 @@
 #    By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/18 15:13:08 by hlibine           #+#    #+#              #
-#    Updated: 2024/02/29 15:31:08 by hlibine          ###   ########.fr        #
+#    Updated: 2024/03/11 15:24:36 by hlibine          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,6 +67,7 @@ FILES = srcs/ft_atoi \
 			srcs/ft_lstiter \
 			srcs/ft_lstmap \
 			srcs/get_next_line/get_next_line \
+			srcs/ft_strldup \
 
 SRCS_DIR = ./
 SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))

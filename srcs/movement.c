@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 10:22:39 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/08 11:34:41 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/11 14:59:49 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	sl_ent_interact(t_mlx *game)
 	}
 }
 
-void	sl_movedir(char **data, t_player *player, int dir)
+void	sl_movedir(t_mlx *game, char **data, t_player *player, int dir)
 {
 	int	canmove;
 	
@@ -50,5 +50,6 @@ void	sl_movedir(char **data, t_player *player, int dir)
 		++player->moves;
 		ft_putstr_fd("moves: ", 1);
 		ft_putendl_fd(ft_itoa(player->moves), 1);
+		render_game(game);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 11:19:52 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/08 15:18:16 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/11 15:00:19 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <stdio.h>
 
 // Compatibilty stuff
+
 # ifdef __APPLE__
 #  include "../libs/minilibx_opengl/mlx.h"
 # endif
@@ -33,7 +34,7 @@
 
 // Img Directories
 
-#define MAP_TEXTURES "../map_textures"
+#define MAP_TEXTURES "map_textures/"
 
 // Directions
 
@@ -70,6 +71,13 @@ typedef struct s_player
 	int		direction;
 }			t_player;
 
+typedef struct s_xpm
+{
+	void	*img;
+	int		width;
+	int		hight;
+}			t_xmp;
+
 typedef struct s_map
 {
 	char	**data;
@@ -79,6 +87,10 @@ typedef struct s_map
 	int		width;
 	t_pos	*spawn;
 	t_pos	*exit;
+	t_xmp	wall;
+	t_xmp	floor;
+	t_xmp	point;
+	t_xmp	end;
 }			t_map;
 
 typedef struct s_data
@@ -104,11 +116,12 @@ typedef struct s_mlx
 t_mlx	*sl_mlx_init(const char *av);
 void	sl_error(char *msg);
 int		expose_render(t_mlx *game);
-int		render_game(t_mlx *game);
+void	render_game(t_mlx *game);
 t_map	*map_init(const char *av);
 void	check_path(t_map *map);
-void	sl_movedir(char **data, t_player *player, int dir);
+void	sl_movedir(t_mlx *game, char **data, t_player *player, int dir);
 void	sl_ent_interact(t_mlx *game);
 char	**mapdup(char **data);
+void	set_textures(t_mlx *game, t_map *map);
 
 #endif
