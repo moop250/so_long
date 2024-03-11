@@ -29,6 +29,7 @@ The bonus part of pipex enhances the basic functionality with the following feat
 ## Credits
 
 - Key by [karsiori](https://karsiori.itch.io/)
+- Slime by [Warsvault](https://warsvault.itch.io/)
 
 ## Usage 
 
