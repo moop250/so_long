@@ -26,9 +26,6 @@ The bonus part of pipex enhances the basic functionality with the following feat
 
 ![](https://img.shields.io/github/languages/code-size/hlibine/so_long?color=5BCFFF)
 
-## Credits
-- Map textures by [Lukky](https://itch.io/profile/lukky-nl)
-
 ## Usage 
 
 To clone the repository use:
