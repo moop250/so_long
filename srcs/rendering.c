@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 18:05:56 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/11 16:35:06 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/12 16:29:32 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	put_image(t_mlx *game, void *img, int x, int y)
 
 void	put_player(t_mlx *game, t_player *player)
 {
-	mlx_put_image_to_window(game->mlx , game->mlx_win, player->sprite.img,
+	mlx_put_image_to_window(game->mlx , game->mlx_win, player->frame,
 		player->pos->x * SCALE, player->pos->y * SCALE);
 }
 

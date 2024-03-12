@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 11:19:52 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/11 16:34:06 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/12 17:04:32 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,13 +71,20 @@ typedef struct s_xpm
 	int		hight;
 }			t_xmp;
 
+typedef struct s_sl
+{
+	t_xmp		*content;
+	struct s_sl	*next;
+}	t_sl;
+
 typedef struct s_player
 {
 	t_pos	*pos;
 	int		moves;
 	int		score;
 	int		direction;
-	t_xmp	sprite;
+	t_sl	*sprites;
+	void	*frame;
 }			t_player;
 
 typedef struct s_map

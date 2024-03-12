@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 11:19:56 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/11 15:00:04 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/12 14:20:05 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,6 @@ int	main(int ac, char const **av)
 	mlx_expose_hook(game->mlx_win, expose_render, game);
 	mlx_hook(game->mlx_win, ON_KEYDOWN, 1L << 0, sl_keypress, game);
 	mlx_hook(game->mlx_win, ON_DESTROY, 0, sl_destroy, game);
+	// mlx_loop_hook(game->mlx)
 	mlx_loop(game->mlx);
 }
