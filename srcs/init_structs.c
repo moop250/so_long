@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 17:13:07 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/12 10:58:14 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/13 00:54:31 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,11 @@ t_mlx	*sl_mlx_init(const char *av)
 
 	mlx = galloc(sizeof(t_mlx));
 	mlx->map = map_init(av);
-	mlx->map_name = ft_substr(av, 5, ft_strlen(av) - 9);
-	if (av[0] == 'm' || av[1] == 'a' || av[2] == 'p' || av[3] == 's')
-		tmp = ft_strjoin("so_long | ", mlx->map_name);
+	if (av[0] == 'm' && av[1] == 'a' && av[2] == 'p' && av[3] == 's')
+		mlx->map_name = ft_substr(av, 5, ft_strlen(av) - 9);
 	else
-		tmp = mlx->map_name;
+		mlx->map_name = ft_substr(av, 0, ft_strlen(av) - 4);
+	tmp = ft_strjoin("so_long | ", mlx->map_name);
 	initplayer(mlx);
 	mlx->mlx = mlx_init();
 	set_textures(mlx, mlx->map);
