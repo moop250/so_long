@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 11:19:52 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/13 11:41:13 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/13 17:10:11 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <fcntl.h>
 # include <stdio.h>
 # include <unistd.h>
+# include <sys/time.h>
 
 // Compatibilty stuff
 
@@ -117,7 +118,7 @@ typedef struct s_mlx
 	void		*mlx;
 	void		*mlx_win;
 	t_map		*map;
-	char 		*map_name;
+	char		*map_name;
 	t_player	*player;
 }			t_mlx;
 
