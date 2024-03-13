@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   helper_funcs.c                                     :+:      :+:    :+:   */
+/*   lst_funcs.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 11:18:39 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/13 11:19:56 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/13 18:39:44 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,24 @@ void	sl_lstadd_back(t_sl **lst, t_sl *new)
 		*lst = new;
 	else
 		sl_lstlast(*lst)->next = new;
+	return ;
+}
+
+t_pointll	*sl_lstnewpoint(t_point *content)
+{
+	t_pointll	*node;
+
+	node = galloc(sizeof(t_pointll));
+	if (!node)
+		return (NULL);
+	node->content = content;
+	node->next = NULL;
+	return (node);
+}
+
+void	sl_lstadd_front(t_pointll **lst, t_pointll *new)
+{
+	new->next = *lst;
+	*lst = new;
 	return ;
 }

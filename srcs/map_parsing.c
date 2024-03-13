@@ -6,38 +6,48 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 14:58:18 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/11 14:32:04 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/13 19:30:19 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
+void	point_parser(t_map *map, int x, int y)
+{
+	t_point	*new;
+
+	++map->score_needed;
+	new = galloc(sizeof(t_point));
+	new->pos->x = x;
+	new->pos->y = y;
+	sl_lstadd_front(&map->points, sl_lstnewpoint(new));
+}
+
 void	ent_parser(t_map *map)
 {
-	int	i;
-	int	a;
-	int	ents[3];
+	int	y;
+	int	x;
+	int	ents[2];
 
-	i = 0;
+	y = 0;
+	map->score_needed = 0;
 	ents[0] = 0;
 	ents[1] = 0;
-	ents[2] = 0;
-	while (map->data[++i])
+	while (map->data[++y])
 	{
-		a = -1;
-		while (map->data[i][++a])
+		x = -1;
+		while (map->data[y][++x])
 		{
-			if (map->data[i][a] == 'C')
+			if (map->data[y][x] == 'C')
+				point_parser(map, x, y);
+			else if (map->data[y][x] == 'E')
 				++ents[0];
-			else if (map->data[i][a] == 'E')
+			else if (map->data[y][x] == 'P')
 				++ents[1];
-			else if (map->data[i][a] == 'P')
-				++ents[2];
 		}
 	}
-	if (ents[0] < 1 || ents[1] != 1 || ents[2] != 1)
+	if (map->score_needed < 1 || ents[0] != 1 || ents[1] != 1)
 		sl_error("invalid map");
-	map->score_needed = ents[0];
 }
 
 void	checkname(const char *av)

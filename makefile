@@ -130,7 +130,7 @@ SUPP = srcs/init_structs.c \
 		srcs/pathing.c \
 		srcs/movement.c \
 		srcs/texture_parsing.c \
-		srcs/helper_funcs.c \
+		srcs/lst_funcs.c \
 		srcs/animations.c \
 
 MINILIBX := $(MINILIBX_PATH)$(MINILIBX)

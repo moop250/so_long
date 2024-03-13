@@ -6,11 +6,49 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 11:57:49 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/13 11:23:24 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/13 19:04:55 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+char	*xpm_address(char *path, int filenum)
+{
+	char	*tmp;
+	char	*tmp2;
+	tmp = ft_strjoin(path, ft_itoa(filenum));
+	tmp2 = ft_strjoin(tmp, ".xpm");
+	gfree(tmp);
+	return (tmp2);
+}
+
+void	set_points(t_mlx *game)
+{
+	char	*tmp;
+	t_sl	*point;
+	int		i;
+	t_xmp	*new;
+	t_sl	*tmp2;
+
+	i = 0;
+	point = NULL;
+	tmp = xpm_address(POINT_TEXTURES, i);
+	while (access(tmp, F_OK) == 0)
+	{
+		new = galloc(sizeof(t_xmp));
+		new->img = mlx_xpm_file_to_image(game->mlx, tmp, &new->width,
+				&new->hight);
+		if (!new->img)
+			sl_error("xmp error");
+		sl_lstadd_back(&point, sl_lstnew(new));
+		gfree(tmp);
+		tmp = xpm_address(POINT_TEXTURES, ++i);
+	}
+	gfree(tmp);
+	tmp2 = sl_lstlast(point);
+	tmp2->next = point;
+	game->map->point_frames = point;
+}
 
 void	set_textures(t_mlx *game, t_map *map)
 {
@@ -28,18 +66,13 @@ void	set_textures(t_mlx *game, t_map *map)
 	gfree(tmp);
 	if (!map->wall.img)
 		sl_error("xmp error");
-	tmp = ft_strjoin(MAP_TEXTURES, "point.xpm");
-	map->point.img = mlx_xpm_file_to_image(game->mlx, tmp, &map->point.width,
-		&map->point.hight);
-	if (!map->point.img)
-		sl_error("xmp error");
-	gfree(tmp);
 	tmp = ft_strjoin(MAP_TEXTURES, "exit.xpm");
 	map->end.img = mlx_xpm_file_to_image(game->mlx, tmp, &map->end.width,
 		&map->end.hight);
 	if (!map->end.img)
 		sl_error("xmp error");
 	gfree(tmp);
+	set_points(game);
 }
 
 void	set_sprites(t_mlx *game)
@@ -52,17 +85,17 @@ void	set_sprites(t_mlx *game)
 
 	i = 0;
 	player = NULL;
-	tmp = ft_strjoin("player_sprites/player_", ft_itoa(i));
-	tmp = ft_strjoin(tmp, ".xpm");
+	tmp = xpm_address(SPRITES, i);
 	while (access(tmp, F_OK) == 0)
 	{
 		new = galloc(sizeof(t_xmp));
 		new->img = mlx_xpm_file_to_image(game->mlx, tmp, &new->width,
 				&new->hight);
+		if (!new->img)
+			sl_error("xmp error");
 		sl_lstadd_back(&player, sl_lstnew(new));
 		gfree(tmp);
-		tmp = ft_strjoin("player_sprites/player_", ft_itoa(++i));
-		tmp = ft_strjoin(tmp, ".xpm");
+		tmp = xpm_address(SPRITES, ++i);
 	}
 	gfree(tmp);
 	tmp2 = sl_lstlast(player);
@@ -70,15 +103,3 @@ void	set_sprites(t_mlx *game)
 	game->player->sprites = player;
 	game->player->frame = game->player->sprites->content->img;
 }
-
-/* void	set_sprites(t_mlx *game)
-{
-	char		*tmp;
-	t_player	*player;
-	
-	player = game->player;
-	tmp = ft_strjoin(SPRITES, "player_1.xpm");
-	player->sprite.img = mlx_xpm_file_to_image(game->mlx, tmp,
-		&player->sprite.width, &player->sprite.hight);
-	gfree(tmp);
-} */

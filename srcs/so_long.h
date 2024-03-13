@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 11:19:52 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/13 17:10:11 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/13 18:55:53 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@
 // Img Directories
 
 # define MAP_TEXTURES "map_textures/"
-# define SPRITES "player_sprites/"
+# define POINT_TEXTURES "map_textures/point/point_"
+# define SPRITES "player_sprites/player_"
 
 // Directions
 
@@ -73,6 +74,18 @@ typedef struct s_xpm
 	int		hight;
 }			t_xmp;
 
+typedef struct s_point
+{
+	t_pos	*pos;
+	int		collected;
+}			t_point;
+
+typedef struct s_pointll
+{
+	t_point				*content;
+	struct s_pointll	*next;
+}						t_pointll;
+
 typedef struct s_sl
 {
 	t_xmp		*content;
@@ -91,17 +104,18 @@ typedef struct s_player
 
 typedef struct s_map
 {
-	char	**data;
-	char	**ent_map;
-	int		score_needed;
-	int		length;
-	int		width;
-	t_pos	*spawn;
-	t_pos	*exit;
-	t_xmp	wall;
-	t_xmp	floor;
-	t_xmp	point;
-	t_xmp	end;
+	char		**data;
+	char		**ent_map;
+	int			score_needed;
+	int			length;
+	int			width;
+	t_pos		*spawn;
+	t_pos		*exit;
+	t_xmp		wall;
+	t_xmp		floor;
+	t_pointll	*points;
+	t_sl		*point_frames;
+	t_xmp		end;
 }			t_map;
 
 typedef struct s_data
@@ -124,22 +138,24 @@ typedef struct s_mlx
 
 // Custom functions
 
-t_mlx	*sl_mlx_init(const char *av);
-void	sl_error(char *msg);
-int		expose_render(t_mlx *game);
-void	render_game(t_mlx *game);
-t_map	*map_init(const char *av);
-void	check_path(t_map *map);
-void	sl_movedir(t_mlx *game, char **data, t_player *player, int dir);
-void	sl_ent_interact(t_mlx *game);
-char	**mapdup(char **data);
-void	set_textures(t_mlx *game, t_map *map);
-void	set_sprites(t_mlx *game);
-t_sl	*sl_lstnew(t_xmp *content);
-t_sl	*sl_lstlast(t_sl *lst);
-void	sl_lstadd_back(t_sl **lst, t_sl *new);
-int		animate(t_mlx *game);
-void	put_player(t_mlx *game, t_player *player);
-void	put_image(t_mlx *game, void *img, int x, int y);
+t_mlx		*sl_mlx_init(const char *av);
+void		sl_error(char *msg);
+int			expose_render(t_mlx *game);
+void		render_game(t_mlx *game);
+t_map		*map_init(const char *av);
+void		check_path(t_map *map);
+void		sl_movedir(t_mlx *game, char **data, t_player *player, int dir);
+void		sl_ent_interact(t_mlx *game);
+char		**mapdup(char **data);
+void		set_textures(t_mlx *game, t_map *map);
+void		set_sprites(t_mlx *game);
+t_sl		*sl_lstnew(t_xmp *content);
+t_sl		*sl_lstlast(t_sl *lst);
+void		sl_lstadd_back(t_sl **lst, t_sl *new);
+int			animate(t_mlx *game);
+void		put_player(t_mlx *game, t_player *player);
+void		put_image(t_mlx *game, void *img, int x, int y);
+t_pointll	*sl_lstnewpoint(t_point *content);
+void		sl_lstadd_front(t_pointll **lst, t_pointll *new);
 
 #endif
