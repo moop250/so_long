@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 11:18:39 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/13 22:27:13 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/13 22:42:01 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,7 @@ t_pointll	*sl_lstnewpoint(t_point *content)
 void	sl_lstadd_front(t_pointll **lst, t_pointll *new)
 {
 	if (*lst == NULL)
-	{
 		*lst = new;
-		printf("i should be called once\n");
-	}
 	else
 	{
 		new->next = *lst;
