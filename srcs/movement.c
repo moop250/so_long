@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 10:22:39 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/11 14:59:49 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/13 22:31:18 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,24 @@
 
 void	sl_ent_interact(t_mlx *game)
 {
-	char	coord;
+	char		coord;
+	t_pointll	*tmp;
 
+	tmp = game->map->points;
 	coord = game->map->ent_map[game->player->pos->y][game->player->pos->x];
 	if (coord == 'C')
 	{
-		game->map->ent_map[game->player->pos->y][game->player->pos->x] = '0';
-		game->player->score++;
+		while (tmp)
+		{
+			if (tmp->content->pos.x == game->player->pos->x &&
+					tmp->content->pos.y == game->player->pos->y &&
+					tmp->content->collected != 1)
+			{
+				++game->player->score;
+				tmp->content->collected = 1;
+			}
+			tmp = tmp->next;
+		}
 	}
 	else if (coord == 'E' && game->player->score == game->map->score_needed)
 	{

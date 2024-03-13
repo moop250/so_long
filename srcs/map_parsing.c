@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 14:58:18 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/13 19:30:19 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/13 22:27:04 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	point_parser(t_map *map, int x, int y)
 
 	++map->score_needed;
 	new = galloc(sizeof(t_point));
-	new->pos->x = x;
-	new->pos->y = y;
+	new->pos.x = x;
+	new->pos.y = y;
 	sl_lstadd_front(&map->points, sl_lstnewpoint(new));
 }
 
@@ -120,6 +120,8 @@ t_map	*map_init(const char *av)
 	i = 0;
 	checkname(av);
 	map = galloc(sizeof(t_map));
+
+	map->points = NULL;
 	map->data = map_parser(av);
 	map->width = ft_strlen(map->data[0]);
 	while (map->data[i])

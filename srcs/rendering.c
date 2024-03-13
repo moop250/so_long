@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 18:05:56 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/13 19:16:41 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/13 22:16:18 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,11 +55,12 @@ void	put_points(t_mlx *game)
 	t_pointll	*tmp;
 
 	tmp = game->map->points;
+	i = -1;
 	while (++i < game->map->score_needed)
 	{
 		if (tmp->content->collected != 0)
 			put_image(game, game->map->point_frames->content->img,
-				tmp->content->pos->x, tmp->content->pos->y);
+				tmp->content->pos.x, tmp->content->pos.y);
 		tmp = tmp->next;
 	}
 }
