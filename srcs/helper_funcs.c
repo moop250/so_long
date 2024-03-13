@@ -1,32 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   animations.c                                       :+:      :+:    :+:   */
+/*   helper_funcs.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/12 11:39:30 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/13 11:46:59 by hlibine          ###   ########.fr       */
+/*   Created: 2024/03/13 11:18:39 by hlibine           #+#    #+#             */
+/*   Updated: 2024/03/13 11:19:56 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	mini_render(t_mlx *game)
+t_sl	*sl_lstnew(t_xmp *content)
 {
-	int	x;
-	int	y;
+	t_sl	*node;
 
-	x = game->player->pos->x;
-	y = game->player->pos->y;
-	put_image(game, game->map->floor.img, x, y);
-	put_player(game, game->player);
+	node = galloc(sizeof(t_list));
+	if (!node)
+		return (NULL);
+	node->content = content;
+	node->next = NULL;
+	return (node);
 }
 
-int	animate(t_mlx *game)
+t_sl	*sl_lstlast(t_sl *lst)
 {
-	game->player->sprites = game->player->sprites->next;
-	game->player->frame = game->player->sprites->content->img;
-	mini_render(game);
-	return (1);
+	while (lst)
+	{
+		if (lst->next == NULL)
+			return (lst);
+		lst = lst->next;
+	}
+	return (lst);
+}
+
+void	sl_lstadd_back(t_sl **lst, t_sl *new)
+{
+	if (!*lst)
+		*lst = new;
+	else
+		sl_lstlast(*lst)->next = new;
+	return ;
 }

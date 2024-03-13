@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 11:19:52 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/12 17:04:32 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/13 11:41:13 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include "../libs/extended_ft/srcs/extended_ft.h"
 # include <fcntl.h>
 # include <stdio.h>
+# include <unistd.h>
 
 // Compatibilty stuff
 
@@ -133,5 +134,11 @@ void	sl_ent_interact(t_mlx *game);
 char	**mapdup(char **data);
 void	set_textures(t_mlx *game, t_map *map);
 void	set_sprites(t_mlx *game);
+t_sl	*sl_lstnew(t_xmp *content);
+t_sl	*sl_lstlast(t_sl *lst);
+void	sl_lstadd_back(t_sl **lst, t_sl *new);
+int		animate(t_mlx *game);
+void	put_player(t_mlx *game, t_player *player);
+void	put_image(t_mlx *game, void *img, int x, int y);
 
 #endif
