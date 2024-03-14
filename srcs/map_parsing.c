@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 14:58:18 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/13 22:27:04 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/14 16:01:39 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	point_parser(t_map *map, int x, int y)
 	new = galloc(sizeof(t_point));
 	new->pos.x = x;
 	new->pos.y = y;
+	new->collected = 0;
 	sl_lstadd_front(&map->points, sl_lstnewpoint(new));
 }
 

@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 11:19:52 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/13 21:25:38 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/14 15:28:23 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,5 +157,6 @@ void		put_player(t_mlx *game, t_player *player);
 void		put_image(t_mlx *game, void *img, int x, int y);
 t_pointll	*sl_lstnewpoint(t_point *content);
 void		sl_lstadd_front(t_pointll **lst, t_pointll *new);
+void		put_points(t_mlx *game);
 
 #endif

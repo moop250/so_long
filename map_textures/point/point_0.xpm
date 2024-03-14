@@ -1,117 +1,160 @@
 /* XPM */
-static char * sprite_xpm[] = {
-"50 50 63 1",
-"  c #7F3617",
-". c #8A3F13",
-"X c #8A3F14",
-"o c #87410D",
-"O c #94490D",
-"+ c #994C0D",
-"@ c #9A4D0D",
-"# c #984D0E",
-"$ c #984D0F",
-"% c #9A4D0E",
-"& c #9B500F",
-"* c #9F510E",
-"= c #8F4310",
-"- c #8B4014",
-"; c #A0520E",
-": c #A1520E",
-"> c #A0520F",
-", c #A2530E",
-"< c #A3540F",
-"1 c #A4550E",
-"2 c #A15410",
-"3 c #A25410",
-"4 c #A15512",
-"5 c #AE5C10",
-"6 c #AF5D11",
-"7 c #AF5D12",
-"8 c #D06F15",
-"9 c #D57F22",
-"0 c #E7902D",
-"q c #EA9029",
-"w c #FF9522",
-"e c #FF9823",
-"r c #FF9C24",
-"t c #FF9F2C",
-"y c #FFA02F",
-"u c #FFA132",
-"i c #FFA333",
-"p c #FFA234",
-"a c #FFA739",
-"s c #FFAA3F",
-"d c #FFB444",
-"f c #FFB24C",
-"g c #FFB451",
-"h c #FFBA5F",
-"j c #FFC060",
-"k c #FFC264",
-"l c #FFC76D",
-"z c #FFC773",
-"x c #FFC971",
-"c c #FFCA73",
-"v c #FFCD78",
-"b c #FFCC81",
-"n c #FFD685",
-"m c #FFD48F",
-"M c #FFD88A",
-"N c #FFD98C",
-"B c #FFD896",
-"V c #FFDC9E",
-"C c #FFE3AA",
-"Z c #FFE4A9",
-"A c #FFE4AA",
-"S c #FFE7AF",
-"D c None",
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD"
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD"
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD"
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD"
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD"
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD"
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD"
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD"
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD"
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD"
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD"
-"DDDDDDDDDDDDDDDDDDDDDDAsas9*DDDDDDDDDDDDDDDDDDDDDD"
-"DDDDDDDDDDDDDDDDDDDDDZp=DDp9ODDDDDDDDDDDDDDDDDDDDD"
-"DDDDDDDDDDDDDDDDDDDDZp.DDDDp9*DDDDDDDDDDDDDDDDDDDD"
-"DDDDDDDDDDDDDDDDDDDDp DDDDDDg-DDDDDDDDDDDDDDDDDDDD"
-"DDDDDDDDDDDDDDDDDDDDjpXDDDDg9-DDDDDDDDDDDDDDDDDDDD"
-"DDDDDDDDDDDDDDDDDDDDDgp-DDg9-DDDDDDDDDDDDDDDDDDDDD"
-"DDDDDDDDDDDDDDDDDDDDDDggpp9-DDDDDDDDDDDDDDDDDDDDDD"
-"DDDDDDDDDDDDDDDDDDDDDDDSpODDDDDDDDDDDDDDDDDDDDDDDD"
-"DDDDDDDDDDDDDDDDDDDDDDDCp5DDDDDDDDDDDDDDDDDDDDDDDD"
-"DDDDDDDDDDDDDDDDDDDDDDDc0,DDDDDDDDDDDDDDDDDDDDDDDD"
-"DDDDDDDDDDDDDDDDDDDDDDDB0:DDDDDDDDDDDDDDDDDDDDDDDD"
-"DDDDDDDDDDDDDDDDDDDDDDDv0;DDDDDDDDDDDDDDDDDDDDDDDD"
-"DDDDDDDDDDDDDDDDDDDDDDDbp<DDDDDDDDDDDDDDDDDDDDDDDD"
-"DDDDDDDDDDDDDDDDDDDDDDDzp6DDDDDDDDDDDDDDDDDDDDDDDD"
-"DDDDDDDDDDDDDDDDDDDDDDDfp>DDDDDDDDDDDDDDDDDDDDDDDD"
-"DDDDDDDDDDDDDDDDDDDDDDDkp%DDDDDDDDDDDDDDDDDDDDDDDD"
-"DDDDDDDDDDDDDDDDDDDDDDDMp+DDDDDDDDDDDDDDDDDDDDDDDD"
-"DDDDDDDDDDDDDDDDDDDDDDDhp1DDDDDDDDDDDDDDDDDDDDDDDD"
-"DDDDDDDDDDDDDDDDDDDDDDDmp@DDDDDDDDDDDDDDDDDDDDDDDD"
-"DDDDDDDDDDDDDDDDDDDDDDDVp@DDDDDDDDDDDDDDDDDDDDDDDD"
-"DDDDDDDDDDDDDDDDDDDDDDDnp;DDDDDDDDDDDDDDDDDDDDDDDD"
-"DDDDDDDDDDDDDDDDDDDDDDDly28quDDDDDDDDDDDDDDDDDDDDD"
-"DDDDDDDDDDDDDDDDDDDDDDDNp38$DDDDDDDDDDDDDDDDDDDDDD"
-"DDDDDDDDDDDDDDDDDDDDDDDnp78DDDDDDDDDDDDDDDDDDDDDDD"
-"DDDDDDDDDDDDDDDDDDDDDDDdt&8wrDDDDDDDDDDDDDDDDDDDDD"
-"DDDDDDDDDDDDDDDDDDDDDDDxp#8$DDDDDDDDDDDDDDDDDDDDDD"
-"DDDDDDDDDDDDDDDDDDDDDDDni48erDDDDDDDDDDDDDDDDDDDDD"
-"DDDDDDDDDDDDDDDDDDDDDDDfpoDDDDDDDDDDDDDDDDDDDDDDDD"
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD"
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD"
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD"
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD"
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD"
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD"
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD"
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD"
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD"
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD"
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD"
+static char *result[] = {
+/* columns rows colors chars-per-pixel */
+"49 47 107 2 ",
+"   c #743612",
+".  c #7F3B14",
+"X  c #823C11",
+"o  c #823D12",
+"O  c #843E14",
+"+  c #853F14",
+"@  c #994E0F",
+"#  c #864012",
+"$  c #8E4610",
+"%  c #8D4415",
+"&  c #914912",
+"*  c #984D12",
+"=  c #9C5110",
+"-  c #9D5210",
+";  c #9D5212",
+":  c #A05513",
+">  c #A25612",
+",  c #A35712",
+"<  c #A35713",
+"1  c #A25714",
+"2  c #A45814",
+"3  c #A45815",
+"4  c #A65A14",
+"5  c #AA5D16",
+"6  c #AB5E16",
+"7  c #AE5F14",
+"8  c #B16216",
+"9  c #B9691A",
+"0  c #B96A1A",
+"q  c #BA6A1A",
+"w  c #BF6E1B",
+"e  c #C06F1B",
+"r  c #C97214",
+"t  c #993B42",
+"y  c #AB2E60",
+"u  c #AE2772",
+"i  c #DE851C",
+"p  c #FD8F03",
+"a  c #F98F07",
+"s  c #FD9308",
+"d  c #ED8D14",
+"f  c #EE901C",
+"g  c #F79617",
+"h  c #FB9511",
+"j  c #F49419",
+"k  c #F0921E",
+"l  c #F1941F",
+"z  c #F99718",
+"x  c #F99819",
+"c  c #F8991F",
+"v  c #DB8825",
+"b  c #E08A23",
+"n  c #E18C26",
+"m  c #E08B28",
+"M  c #E49029",
+"N  c #EA942C",
+"B  c #EB952C",
+"V  c #F29620",
+"C  c #F29622",
+"Z  c #F19624",
+"A  c #F49822",
+"S  c #F69A22",
+"D  c #F79B23",
+"F  c #F19827",
+"G  c #F49B27",
+"H  c #F99D24",
+"J  c #F39B28",
+"K  c #F39A29",
+"L  c #F39B29",
+"P  c #F49C29",
+"I  c #F49C2A",
+"U  c #F29E30",
+"Y  c #F9A02B",
+"T  c #F7A232",
+"R  c #F6A233",
+"E  c #F6A73E",
+"W  c #F8A73C",
+"Q  c #F6A841",
+"!  c #F7A942",
+"~  c #F8AB45",
+"^  c #F6B050",
+"/  c #F7B050",
+"(  c #F7B055",
+")  c #F7B254",
+"_  c #F6B255",
+"`  c #F7B457",
+"'  c #F6B764",
+"]  c #F7B962",
+"[  c #F7BA67",
+"{  c #F6BB69",
+"}  c #F8BC6A",
+"|  c #F9BD6A",
+" . c #F8C073",
+".. c #FBC272",
+"X. c #F9C274",
+"o. c #FAC77D",
+"O. c #B31D88",
+"+. c #CD189C",
+"@. c #A94990",
+"#. c #898989",
+"$. c #F6C786",
+"%. c #F9CA86",
+"&. c #F9CD8C",
+"*. c #FBD49B",
+"=. c #FAD49C",
+"-. c #FCE4BB",
+";. c None",
+/* pixels */
+";.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.",
+";.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.",
+";.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.",
+";.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.",
+";.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.",
+";.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.",
+";.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.",
+";.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.",
+";.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.",
+";.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.",
+";.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.",
+";.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.",
+";.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.",
+";.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.#.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.",
+";.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.#.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.",
+";.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.",
+";.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.",
+";.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.#.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.",
+";.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.#.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.",
+";.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.",
+";.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.) o.*...-.E U ;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.",
+";.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.] ^ W H z x h S & ;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.",
+";.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.X.Y c D D D U S O ;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.",
+";.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;./ Q % ;.;.;.  S o ;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.",
+";.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.&.Q O.O.O.;.  S o ;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.",
+";.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.` J . + % u y S o ;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.",
+";.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.%.J g g S S z S o ;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.",
+";.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.=.[ | A h z s p $ ;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.",
+";.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.O.E P ~ S x a # O.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.",
+";.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.z I x d # ;.;.t t ;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.",
+";.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.7 ; X ;.t t ;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.",
+";.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.r r * ;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.",
+";.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.l n 4 ;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.",
+";.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.m f : ;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.",
+";.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.B B < ;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.",
+";.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.' V @ ;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.",
+";.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.@.;.+.;.;.;.( Z - ;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.",
+";.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.+.;.;.$.k , ;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.",
+";.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.+.+.{ F = ;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.",
+";.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.} F > ;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.",
+";.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.! C w 5 h R ;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.",
+";.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.U K q 3 j ;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.",
+";.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;._ L 9 1 i ;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.",
+";.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.U G 0 2 z T ;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.",
+";.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;. .G q 6 b ;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.",
+";.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.U M e 8 P P ;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.",
+";.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.N v e ;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;.;."
 };
