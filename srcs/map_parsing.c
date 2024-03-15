@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 14:58:18 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/14 16:01:39 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/15 13:27:29 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,6 +129,5 @@ t_map	*map_init(const char *av)
 		++i;
 	map->length = i;
 	mapchecker(map);
-	map->ent_map = mapdup(map->data);
 	return (map);
 }

@@ -6,11 +6,23 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 10:22:39 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/13 22:31:18 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/15 13:26:24 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+#include <limits.h>
+
+void	put_moves(t_mlx *game)
+{
+	char	*tmp;
+
+	put_image(game, game->map->wall.img, 0, 0);
+	put_image(game, game->map->wall.img, 1, 0);
+	put_image(game, game->map->wall.img, 2, 0);
+	tmp = ft_strjoin("moves: ", ft_itoa(game->player->moves));
+	mlx_string_put(game->mlx, game->mlx_win, SCALE / 10, SCALE / 2, 0xFFFFFF, tmp);
+}
 
 void	sl_ent_interact(t_mlx *game)
 {
@@ -18,7 +30,7 @@ void	sl_ent_interact(t_mlx *game)
 	t_pointll	*tmp;
 
 	tmp = game->map->points;
-	coord = game->map->ent_map[game->player->pos->y][game->player->pos->x];
+	coord = game->map->data[game->player->pos->y][game->player->pos->x];
 	if (coord == 'C')
 	{
 		while (tmp)
@@ -43,7 +55,7 @@ void	sl_ent_interact(t_mlx *game)
 void	sl_movedir(t_mlx *game, char **data, t_player *player, int dir)
 {
 	int	canmove;
-	
+
 	canmove = 1;
 	if (dir == UP && (data[player->pos->y - 1][player->pos->x] != '1'))
 		player->pos->y--;
@@ -59,8 +71,7 @@ void	sl_movedir(t_mlx *game, char **data, t_player *player, int dir)
 	{
 		player->direction = dir;
 		++player->moves;
-		ft_putstr_fd("moves: ", 1);
-		ft_putendl_fd(ft_itoa(player->moves), 1);
+		put_moves(game);
 		render_game(game);
 	}
 }
