@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 11:19:52 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/15 13:27:23 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/18 17:43:45 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,11 @@
 # ifndef __APPLE__
 #  include "../libs/minilibx-linux/mlx.h"
 # endif
+
+// Animation stuff
+
+# define PLAYER_FRAMES 7.0
+# define POINT_FRAMES 27.0
 
 // Rendering stuff
 
@@ -74,6 +79,19 @@ typedef struct s_xpm
 	int		hight;
 }			t_xmp;
 
+typedef struct s_enemy
+{
+	t_pos	pos;
+	int		dir;
+	int		waiting;
+}			t_enemy;
+
+typedef struct s_enemyll
+{
+	t_enemy				*content;
+	struct s_enemyll	*next;
+}						t_enemyll;
+
 typedef struct s_point
 {
 	t_pos	pos;
@@ -112,9 +130,11 @@ typedef struct s_map
 	t_pos		*exit;
 	t_xmp		wall;
 	t_xmp		floor;
+	t_xmp		end;
 	t_pointll	*points;
 	t_sl		*point_frames;
-	t_xmp		end;
+	t_enemyll	*enemies;
+	t_sl		*enemy_frames;
 }			t_map;
 
 typedef struct s_data
@@ -151,12 +171,16 @@ void		set_sprites(t_mlx *game);
 t_sl		*sl_lstnew(t_xmp *content);
 t_sl		*sl_lstlast(t_sl *lst);
 void		sl_lstadd_back(t_sl **lst, t_sl *new);
-int			animate(t_mlx *game);
+void		animate(t_mlx *game);
 void		put_player(t_mlx *game, t_player *player);
 void		put_image(t_mlx *game, void *img, int x, int y);
 t_pointll	*sl_lstnewpoint(t_point *content);
 void		sl_lstadd_front(t_pointll **lst, t_pointll *new);
 void		put_points(t_mlx *game);
 void		put_moves(t_mlx *game);
+void		object_parser(t_map *map);
+int			event(t_mlx *game);
+t_enemyll	*sl_lstnewenemy(t_enemy *content);
+void		sl_addenemy_front(t_enemyll **lst, t_enemyll *new);
 
 #endif

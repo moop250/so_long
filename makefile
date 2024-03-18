@@ -132,6 +132,9 @@ SUPP = srcs/init_structs.c \
 		srcs/texture_parsing.c \
 		srcs/lst_funcs.c \
 		srcs/animations.c \
+		srcs/events.c \
+		srcs/ent_parsing.c \
+		srcs/enemy_lst_funcs.c \
 
 MINILIBX := $(MINILIBX_PATH)$(MINILIBX)
 

@@ -6,50 +6,11 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 14:58:18 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/15 13:27:29 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/18 15:10:21 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-void	point_parser(t_map *map, int x, int y)
-{
-	t_point	*new;
-
-	++map->score_needed;
-	new = galloc(sizeof(t_point));
-	new->pos.x = x;
-	new->pos.y = y;
-	new->collected = 0;
-	sl_lstadd_front(&map->points, sl_lstnewpoint(new));
-}
-
-void	ent_parser(t_map *map)
-{
-	int	y;
-	int	x;
-	int	ents[2];
-
-	y = 0;
-	map->score_needed = 0;
-	ents[0] = 0;
-	ents[1] = 0;
-	while (map->data[++y])
-	{
-		x = -1;
-		while (map->data[y][++x])
-		{
-			if (map->data[y][x] == 'C')
-				point_parser(map, x, y);
-			else if (map->data[y][x] == 'E')
-				++ents[0];
-			else if (map->data[y][x] == 'P')
-				++ents[1];
-		}
-	}
-	if (map->score_needed < 1 || ents[0] != 1 || ents[1] != 1)
-		sl_error("invalid map");
-}
 
 void	checkname(const char *av)
 {
@@ -81,7 +42,7 @@ void	mapchecker(t_map *map)
 	while (++i < map->length)
 		if (map->data[i][0] != '1' || map->data[i][map->width - 1] != '1')
 			sl_error("invaild map");
-	ent_parser(map);
+	object_parser(map);
 	check_path(map);
 }
 
@@ -123,6 +84,7 @@ t_map	*map_init(const char *av)
 	map = galloc(sizeof(t_map));
 
 	map->points = NULL;
+	map->score_needed = 0;
 	map->data = map_parser(av);
 	map->width = ft_strlen(map->data[0]);
 	while (map->data[i])

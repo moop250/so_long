@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 11:39:30 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/14 15:41:34 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/18 17:49:39 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	animate_player(t_mlx *game, double current_time)
 	double			elapsed_time;
 
 	elapsed_time = current_time - last_frame_time;
-	if (elapsed_time >= 1.0 / 7.0)
+	if (elapsed_time >= 1.0 / PLAYER_FRAMES)
 	{
 		game->player->sprites = game->player->sprites->next;
 		game->player->frame = game->player->sprites->content->img;
@@ -52,7 +52,7 @@ void	animate_collectables(t_mlx *game, double current_time)
 	double			elapsed_time;
 
 	elapsed_time = current_time - last_frame_time;
-	if (elapsed_time >= 1.0 / 26.0)
+	if (elapsed_time >= 1.0 / POINT_FRAMES)
 	{
 		game->map->point_frames = game->map->point_frames->next;
 		put_points(game);
@@ -60,12 +60,11 @@ void	animate_collectables(t_mlx *game, double current_time)
 	}
 }
 
-int	animate(t_mlx *game)
+void	animate(t_mlx *game)
 {
 	double			current_time;
 
 	current_time = get_current_time();
 	animate_player(game, current_time);
 	animate_collectables(game, current_time);
-	return (1);
 }
