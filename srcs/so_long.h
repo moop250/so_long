@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 11:19:52 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/19 23:29:34 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/19 23:54:14 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,8 +129,8 @@ typedef struct s_map
 	int			score_needed;
 	int			length;
 	int			width;
-	t_pos		*spawn;
-	t_pos		*exit;
+	t_pos		spawn;
+	t_pos		exit;
 	t_xmp		wall;
 	t_xmp		floor;
 	t_xmp		end;

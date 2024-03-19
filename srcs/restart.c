@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 22:52:10 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/19 23:33:06 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/19 23:57:50 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ void	restart(t_mlx *game)
 		tmp_e->content->pos.y = tmp_e->content->start_pos.y;
 		tmp_e = tmp_e->next;
 	}
-	game->player->pos.x = game->map->spawn->x;
-	game->player->pos.y = game->map->spawn->y;
+	game->player->pos.x = game->map->spawn.x;
+	game->player->pos.y = game->map->spawn.y;
 	game->player->moves = 0;
 	game->player->score = 0;
 	expose_render(game);

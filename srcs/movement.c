@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 10:22:39 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/19 23:32:01 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/20 00:01:28 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ void	put_moves(t_mlx *game)
 	put_image(game, game->map->wall.img, 1, 0);
 	put_image(game, game->map->wall.img, 2, 0);
 	tmp = ft_strjoin("moves: ", ft_itoa(game->player->moves));
-	mlx_string_put(game->mlx, game->mlx_win, SCALE / 10, SCALE / 2, 0xFFFFFF, tmp);
+	mlx_string_put(game->mlx, game->mlx_win,
+		SCALE / 10, SCALE / 2, 0xFFFFFF, tmp);
 }
 
 void	enem_interact(t_mlx *game, int x, int y)
@@ -38,7 +39,7 @@ void	enem_interact(t_mlx *game, int x, int y)
 		}
 		tmp = tmp->next;
 	}
-}	
+}
 
 void	sl_ent_interact(t_mlx *game)
 {
@@ -51,9 +52,9 @@ void	sl_ent_interact(t_mlx *game)
 	{
 		while (tmp)
 		{
-			if (tmp->content->pos.x == game->player->pos.x &&
-					tmp->content->pos.y == game->player->pos.y &&
-					tmp->content->collected != 1)
+			if (tmp->content->pos.x == game->player->pos.x
+				&& tmp->content->pos.y == game->player->pos.y
+				&& tmp->content->collected != 1)
 			{
 				++game->player->score;
 				tmp->content->collected = 1;

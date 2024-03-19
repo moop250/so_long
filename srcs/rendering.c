@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 18:05:56 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/19 23:32:17 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/19 23:57:40 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,17 @@
 
 void	put_image(t_mlx *game, void *img, int x, int y)
 {
-	if (x == game->map->exit->x && y == game->map->exit->y)
-		mlx_put_image_to_window(game->mlx , game->mlx_win, game->map->end.img,
+	if (x == game->map->exit.x && y == game->map->exit.y)
+		mlx_put_image_to_window(game->mlx, game->mlx_win, game->map->end.img,
 			x * SCALE, y * SCALE);
 	else
-		mlx_put_image_to_window(game->mlx , game->mlx_win, img, x * SCALE, y * SCALE);
+		mlx_put_image_to_window(game->mlx, game->mlx_win, img,
+			x * SCALE, y * SCALE);
 }
 
 void	put_player(t_mlx *game, t_player *player)
 {
-	mlx_put_image_to_window(game->mlx , game->mlx_win, player->frame,
+	mlx_put_image_to_window(game->mlx, game->mlx_win, player->frame,
 		player->pos.x * SCALE, player->pos.y * SCALE);
 }
 

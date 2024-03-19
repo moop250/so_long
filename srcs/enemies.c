@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 17:28:41 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/19 23:30:28 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/19 23:38:54 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	checkback(t_mlx *game, int x, int y)
 	enemies = game->map->enemies;
 	while (point)
 	{
-		if(point->content->pos.x == x && point->content->pos.y == y)
+		if (point->content->pos.x == x && point->content->pos.y == y)
 			return (1);
 		point = point->next;
 	}
@@ -36,7 +36,7 @@ int	checkback(t_mlx *game, int x, int y)
 
 void	put_enemy(t_mlx *game, t_enemy *enemy)
 {
-	mlx_put_image_to_window(game->mlx , game->mlx_win,
+	mlx_put_image_to_window(game->mlx, game->mlx_win,
 		game->map->enemy_texture->content->img,
 		enemy->pos.x * SCALE, enemy->pos.y * SCALE);
 }

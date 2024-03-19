@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 11:57:49 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/19 17:21:34 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/19 23:59:32 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ char	*xpm_address(char *path, int filenum)
 {
 	char	*tmp;
 	char	*tmp2;
+
 	tmp = ft_strjoin(path, ft_itoa(filenum));
 	tmp2 = ft_strjoin(tmp, ".xpm");
 	gfree(tmp);
@@ -84,19 +85,19 @@ void	set_textures(t_mlx *game, t_map *map)
 
 	tmp = ft_strjoin(MAP_TEXTURES, "floor.xpm");
 	map->floor.img = mlx_xpm_file_to_image(game->mlx, tmp, &map->floor.width,
-		&map->floor.hight);
+			&map->floor.hight);
 	if (!map->floor.img)
 		sl_error("xmp error");
 	gfree(tmp);
 	tmp = ft_strjoin(MAP_TEXTURES, "wall.xpm");
 	map->wall.img = mlx_xpm_file_to_image(game->mlx, tmp, &map->wall.width,
-		&map->wall.hight);
+			&map->wall.hight);
 	gfree(tmp);
 	if (!map->wall.img)
 		sl_error("xmp error");
 	tmp = ft_strjoin(MAP_TEXTURES, "exit.xpm");
 	map->end.img = mlx_xpm_file_to_image(game->mlx, tmp, &map->end.width,
-		&map->end.hight);
+			&map->end.hight);
 	if (!map->end.img)
 		sl_error("xmp error");
 	gfree(tmp);

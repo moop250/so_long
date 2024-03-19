@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 15:36:20 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/19 20:35:41 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/20 00:02:23 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	enemies(t_mlx *game, double current_time)
 	double			elapsed_time;
 
 	tmp = game->map->enemies;
-	
 	while (tmp)
 	{
 		elapsed_time = current_time - tmp->content->last_frame_time;
@@ -39,7 +38,8 @@ void	enemies(t_mlx *game, double current_time)
 			}
 			else
 			{
-				move_enemy(game, game->map->data, tmp->content, tmp->content->dir);
+				move_enemy(game, game->map->data,
+					tmp->content, tmp->content->dir);
 				tmp->content->last_frame_time = current_time;
 			}
 		}
