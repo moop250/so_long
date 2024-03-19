@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 11:39:30 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/18 17:49:39 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/19 17:28:07 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,6 @@ void	mini_render(t_mlx *game)
 	y = game->player->pos->y;
 	put_image(game, game->map->floor.img, x, y);
 	put_player(game, game->player);
-}
-
-double	get_current_time(void)
-{
-	struct timeval	now;
-
-	gettimeofday(&now, NULL);
-	return ((double)now.tv_sec + (double)now.tv_usec / 1000000.0);
 }
 
 void	animate_player(t_mlx *game, double current_time)
@@ -60,11 +52,8 @@ void	animate_collectables(t_mlx *game, double current_time)
 	}
 }
 
-void	animate(t_mlx *game)
+void	animate(t_mlx *game, double current_time)
 {
-	double			current_time;
-
-	current_time = get_current_time();
 	animate_player(game, current_time);
 	animate_collectables(game, current_time);
 }

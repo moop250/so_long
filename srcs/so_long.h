@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 11:19:52 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/18 17:43:45 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/19 20:36:04 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@
 # define MAP_TEXTURES "map_textures/"
 # define POINT_TEXTURES "map_textures/point/point_"
 # define SPRITES "player_sprites/player_"
+# define ENEMY_TEXTURES "enemy_textures/enemy_"
 
 // Directions
 
@@ -84,6 +85,7 @@ typedef struct s_enemy
 	t_pos	pos;
 	int		dir;
 	int		waiting;
+	double	last_frame_time;
 }			t_enemy;
 
 typedef struct s_enemyll
@@ -134,7 +136,7 @@ typedef struct s_map
 	t_pointll	*points;
 	t_sl		*point_frames;
 	t_enemyll	*enemies;
-	t_sl		*enemy_frames;
+	t_sl		*enemy_texture;
 }			t_map;
 
 typedef struct s_data
@@ -171,7 +173,7 @@ void		set_sprites(t_mlx *game);
 t_sl		*sl_lstnew(t_xmp *content);
 t_sl		*sl_lstlast(t_sl *lst);
 void		sl_lstadd_back(t_sl **lst, t_sl *new);
-void		animate(t_mlx *game);
+void		animate(t_mlx *game, double current_time);
 void		put_player(t_mlx *game, t_player *player);
 void		put_image(t_mlx *game, void *img, int x, int y);
 t_pointll	*sl_lstnewpoint(t_point *content);
@@ -182,5 +184,6 @@ void		object_parser(t_map *map);
 int			event(t_mlx *game);
 t_enemyll	*sl_lstnewenemy(t_enemy *content);
 void		sl_addenemy_front(t_enemyll **lst, t_enemyll *new);
+void		move_enemy(t_mlx *game, char **data, t_enemy *enemy, int dir);
 
 #endif

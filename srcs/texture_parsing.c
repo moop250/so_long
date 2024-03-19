@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 11:57:49 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/14 16:01:19 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/19 17:21:34 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,34 @@ char	*xpm_address(char *path, int filenum)
 	tmp2 = ft_strjoin(tmp, ".xpm");
 	gfree(tmp);
 	return (tmp2);
+}
+
+void	set_enemies(t_mlx *game)
+{
+	char	*tmp;
+	t_sl	*enemy;
+	int		i;
+	t_xmp	*new;
+	t_sl	*tmp2;
+
+	i = 0;
+	enemy = NULL;
+	tmp = xpm_address(ENEMY_TEXTURES, i);
+	while (access(tmp, F_OK) == 0)
+	{
+		new = galloc(sizeof(t_xmp));
+		new->img = mlx_xpm_file_to_image(game->mlx, tmp, &new->width,
+				&new->hight);
+		if (!new->img)
+			sl_error("xmp error");
+		sl_lstadd_back(&enemy, sl_lstnew(new));
+		gfree(tmp);
+		tmp = xpm_address(ENEMY_TEXTURES, ++i);
+	}
+	gfree(tmp);
+	tmp2 = sl_lstlast(enemy);
+	tmp2->next = enemy;
+	game->map->enemy_texture = enemy;
 }
 
 void	set_points(t_mlx *game)
@@ -73,6 +101,7 @@ void	set_textures(t_mlx *game, t_map *map)
 		sl_error("xmp error");
 	gfree(tmp);
 	set_points(game);
+	set_enemies(game);
 }
 
 void	set_sprites(t_mlx *game)
