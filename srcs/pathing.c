@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 15:58:59 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/19 23:58:02 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/20 00:03:02 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,8 +90,6 @@ char	**mapdup(char **data)
 void	check_path(t_map *map)
 {
 	char	**map2;
-	t_pos	spawn;
-	t_pos	out;
 
 	set_ents(map);
 	map2 = mapdup(map->data);
