@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 17:13:07 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/13 00:54:31 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/19 23:29:59 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ void	initplayer(t_mlx *game)
 	t_player	*player;
 	
 	player = galloc(sizeof(t_player));
-	player->pos = game->map->spawn;
+	player->pos.x = game->map->spawn->x;
+	player->pos.y = game->map->spawn->y;
 	player->score = 0;
 	player->moves = 0;
 	game->player = player;

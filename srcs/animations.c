@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 11:39:30 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/19 17:28:07 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/19 23:30:10 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	mini_render(t_mlx *game)
 	int	x;
 	int	y;
 
-	x = game->player->pos->x;
-	y = game->player->pos->y;
+	x = game->player->pos.x;
+	y = game->player->pos.y;
 	put_image(game, game->map->floor.img, x, y);
 	put_player(game, game->player);
 }

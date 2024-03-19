@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 17:28:41 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/19 21:35:17 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/19 23:30:28 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,10 @@ void	move_enemy(t_mlx *game, char **data, t_enemy *enemy, int dir)
 	else
 		canmove = 0;
 	if (canmove)
+	{
 		render_enemy(game, enemy);
+		enem_interact(game, game->player->pos.x, game->player->pos.y);
+	}
 	else
 		enemy->waiting = 1;
 	enemy->dir = new_dir(canmove, dir);

@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 18:05:56 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/19 22:19:43 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/19 23:32:17 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	put_image(t_mlx *game, void *img, int x, int y)
 void	put_player(t_mlx *game, t_player *player)
 {
 	mlx_put_image_to_window(game->mlx , game->mlx_win, player->frame,
-		player->pos->x * SCALE, player->pos->y * SCALE);
+		player->pos.x * SCALE, player->pos.y * SCALE);
 }
 
 void	render_game(t_mlx *game)
@@ -33,8 +33,8 @@ void	render_game(t_mlx *game)
 	int	y;
 	int	dir;
 
-	x = game->player->pos->x;
-	y = game->player->pos->y;
+	x = game->player->pos.x;
+	y = game->player->pos.y;
 	dir = game->player->direction;
 	put_image(game, game->map->floor.img, x, y);
 	put_player(game, game->player);

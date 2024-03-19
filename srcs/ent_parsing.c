@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 13:58:23 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/19 17:36:10 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/19 23:24:22 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	enemy_parser(t_map *map, int x, int y, char dir)
 	new = galloc(sizeof(t_enemy));
 	new->pos.x = x;
 	new->pos.y = y;
+	new->start_pos.x = x;
+	new->start_pos.y = y;
 	if (dir == 'V')
 		new->dir = UP;
 	else

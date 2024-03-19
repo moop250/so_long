@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 11:19:52 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/19 20:36:04 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/19 23:29:34 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ typedef struct s_xpm
 typedef struct s_enemy
 {
 	t_pos	pos;
+	t_pos	start_pos;
 	int		dir;
 	int		waiting;
 	double	last_frame_time;
@@ -114,7 +115,7 @@ typedef struct s_sl
 
 typedef struct s_player
 {
-	t_pos	*pos;
+	t_pos	pos;
 	int		moves;
 	int		score;
 	int		direction;
@@ -185,5 +186,7 @@ int			event(t_mlx *game);
 t_enemyll	*sl_lstnewenemy(t_enemy *content);
 void		sl_addenemy_front(t_enemyll **lst, t_enemyll *new);
 void		move_enemy(t_mlx *game, char **data, t_enemy *enemy, int dir);
+void		enem_interact(t_mlx *game, int x, int y);
+void		restart(t_mlx *game);
 
 #endif
