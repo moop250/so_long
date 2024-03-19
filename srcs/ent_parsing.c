@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 13:58:23 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/19 23:24:22 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/19 23:50:13 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,24 +49,13 @@ void	ent_parser(t_map *map, int x, int y, char pos)
 		enemy_parser(map, x, y, pos);
 }
 
-void	ent_checker(char in)
-{
-	if (in != '1' && in != '0' && in != 'C' && in != 'V' && in != 'H'
-			&& in != 'E' && in != 'P')
-		sl_error("invalid map object");
-}
-
-void	object_parser(t_map *map)
+void	ent_reader(t_map *map, int *ents)
 {
 	int		y;
 	int		x;
-	int		ents[2];
 	char	pos;
 
 	y = 0;
-	ents[0] = 0;
-	ents[1] = 0;
-	map->enemies = NULL;
 	while (map->data[++y])
 	{
 		x = -1;
@@ -79,9 +68,23 @@ void	object_parser(t_map *map)
 				++ents[0];
 			else if (pos == 'P')
 				++ents[1];
-			ent_checker(pos);
+			else if (pos != '1' && pos != '0' && pos != 'C' && pos != 'V'
+				&& pos != 'H' && pos != 'E' && pos != 'P')
+				sl_error("invalid map object");
 		}
 	}
+}
+
+void	object_parser(t_map *map)
+{
+	int		*ents;
+
+	ents = galloc(2 * sizeof(int));
+	ents[0] = 0;
+	ents[1] = 0;
+	map->enemies = NULL;
+	ent_reader(map, ents);
 	if (map->score_needed < 1 || ents[0] != 1 || ents[1] != 1)
 		sl_error("invalid map");
+	gfree(ents);
 }
