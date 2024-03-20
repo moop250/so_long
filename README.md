@@ -1,5 +1,5 @@
 # so_long
-![In Progress](https://img.shields.io/badge/In_Progress-orange)
+![125/100](https://img.shields.io/badge/125%2F100-brightgreen)
 ## Description
 
 so_long is a 2D map-based game project. The goal is to make a playable character that must collect all collectibles and reach the exit with the fewest moves possible.
