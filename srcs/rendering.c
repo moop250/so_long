@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 18:05:56 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/20 13:24:53 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/20 14:14:05 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,10 @@ void	put_points(t_mlx *game)
 	{
 		x = tmp->content->pos.x;
 		y = tmp->content->pos.y;
-		if (enem_behave(game, x, y) == 1)
-			return ;
 		if (tmp->content->collected == 0)
 		{
+			if (enem_behave(game, x, y) == 1)
+				return ;
 			put_image(game, game->map->floor.img, x, y);
 			put_image(game, game->map->point_frames->content->img, x, y);
 		}
