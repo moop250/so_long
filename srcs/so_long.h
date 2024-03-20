@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 11:19:52 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/20 11:57:18 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/20 13:24:35 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -190,5 +190,6 @@ void		enem_interact(t_mlx *game, int x, int y);
 void		restart(t_mlx *game);
 void		render_enemy(t_mlx *game, t_enemy *enemy);
 int			enem_behave(t_mlx *game, int x, int y);
+void		put_enemies(t_mlx *game);
 
 #endif

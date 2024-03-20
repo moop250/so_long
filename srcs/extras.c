@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   points.c                                           :+:      :+:    :+:   */
+/*   extras.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 11:53:53 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/20 11:59:54 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/20 13:24:39 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,16 @@ int	enem_behave(t_mlx *game, int x, int y)
 		enem = enem->next;
 	}
 	return (0);
+}
+
+void	put_enemies(t_mlx *game)
+{
+	t_enemyll	*tmp;
+
+	tmp = game->map->enemies;
+	while (tmp)
+	{
+		render_enemy(game, tmp->content);
+		tmp = tmp->next;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 17:28:41 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/20 10:48:15 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/20 13:28:15 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ int	checkback(t_mlx *game, int x, int y)
 			return (1);
 		enemies = enemies->next;
 	}
+	if (game->map->data[y][x] == '1')
+		return (1);
 	return (0);
 }
 

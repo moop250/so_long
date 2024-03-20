@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 18:05:56 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/20 11:58:42 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/20 13:24:53 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,7 @@ int	expose_render(t_mlx *game)
 	}
 	put_points(game);
 	put_player(game, game->player);
+	put_enemies(game);
 	put_moves(game);
 	return (1);
 }
