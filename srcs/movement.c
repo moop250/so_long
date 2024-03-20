@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 10:22:39 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/20 15:59:37 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/20 16:19:19 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	sl_ent_interact(t_mlx *game)
 	else if (coord == 'E' && game->player->score == game->map->score_needed)
 	{
 		mlx_destroy_window(game->mlx, game->mlx_win);
-		exit(1);
+		exit(EXIT_SUCCESS);
 	}
 	enem_interact(game, game->player->pos.x, game->player->pos.y);
 }
