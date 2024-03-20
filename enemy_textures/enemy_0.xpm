@@ -1,57 +1,61 @@
 /* XPM */
-static char *drain_xpm[] = {
-"50 50 3 1",
-"B c #000000",
-"W c None",
-"D c #808080",
-"BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
-"BWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWB",
-"BWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWB",
-"BWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWB",
-"BWWWWWWWWWWWWWWWWWWWWWWWWBWWWWWWWWWWWWWWWWWWWWWWWB",
-"BWWWWWWWWWWWWWWWWWWBBBBBBBBBBBBBWWWWWWWWWWWWWWWWWB",
-"BWWWWWWWWWWWWWWWWBBDDDDDDDDDDDDDBBWWWWWWWWWWWWWWWB",
-"BWWWWWWWWWWWWWWBBDDDDDDDDDDDDDDDDDBBWWWWWWWWWWWWWB",
-"BWWWWWWWWWWWWBBDWWWDDDDDWWWDDDDDWWWDBBWWWWWWWWWWWB",
-"BWWWWWWWWWWWBBDDWWWDDDDDWWWDDDDDWWWDDBBWWWWWWWWWWB",
-"BWWWWWWWWWWBDDDDWWWDDDDDWWWDDDDDWWWDDDDBWWWWWWWWWB",
-"BWWWWWWWWWBDDDDDDDDDDDDDDDDDDDDDDDDDDDDDBWWWWWWWWB",
-"BWWWWWWWWBDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDBWWWWWWWB",
-"BWWWWWWWBBDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDBBWWWWWWB",
-"BWWWWWWWBDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDBWWWWWWB",
-"BWWWWWWBDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDBWWWWWB",
-"BWWWWWWBWWWDDDDDWWWDDDDDWWWDDDDDWWWDDDDDWWWBWWWWWB",
-"BWWWWWBDWWWDDDDDWWWDDDDDWWWDDDDDWWWDDDDDWWWDBWWWWB",
-"BWWWWWBDWWWDDDDDWWWDDDDDWWWDDDDDWWWDDDDDWWWDBWWWWB",
-"BWWWWBDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDBWWWB",
-"BWWWWBDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDBWWWB",
-"BWWWWBDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDBWWWB",
-"BWWWWBDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDBWWWB",
-"BWWWWBDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDBWWWB",
-"BWWWWBDDWWWDDDDDWWWDDDDDWWWDDDDDWWWDDDDDWWWDDBWWWB",
-"BWWWBBDDWWWDDDDDWWWDDDDDWWWDDDDDWWWDDDDDWWWDDBBWWB",
-"BWWWWBDDWWWDDDDDWWWDDDDDWWWDDDDDWWWDDDDDWWWDDBWWWB",
-"BWWWWBDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDBWWWB",
-"BWWWWBDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDBWWWB",
-"BWWWWBDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDBWWWB",
-"BWWWWBDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDBWWWB",
-"BWWWWBDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDBWWWB",
-"BWWWWWBDWWWDDDDDWWWDDDDDWWWDDDDDWWWDDDDDWWWDBWWWWB",
-"BWWWWWBDWWWDDDDDWWWDDDDDWWWDDDDDWWWDDDDDWWWDBWWWWB",
-"BWWWWWWBWWWDDDDDWWWDDDDDWWWDDDDDWWWDDDDDWWWBWWWWWB",
-"BWWWWWWBDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDBWWWWWB",
-"BWWWWWWWBDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDBWWWWWWB",
-"BWWWWWWWBBDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDBBWWWWWWB",
-"BWWWWWWWWBDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDBWWWWWWWB",
-"BWWWWWWWWWBDDDDDDDDDDDDDDDDDDDDDDDDDDDDDBWWWWWWWWB",
-"BWWWWWWWWWWBDDDDWWWDDDDDWWWDDDDDWWWDDDDBWWWWWWWWWB",
-"BWWWWWWWWWWWBBDDWWWDDDDDWWWDDDDDWWWDDBBWWWWWWWWWWB",
-"BWWWWWWWWWWWWBBDWWWDDDDDWWWDDDDDWWWDBBWWWWWWWWWWWB",
-"BWWWWWWWWWWWWWWBBDDDDDDDDDDDDDDDDDBBWWWWWWWWWWWWWB",
-"BWWWWWWWWWWWWWWWWBBDDDDDDDDDDDDDBBWWWWWWWWWWWWWWWB",
-"BWWWWWWWWWWWWWWWWWWBBBBBBBBBBBBBWWWWWWWWWWWWWWWWWB",
-"BWWWWWWWWWWWWWWWWWWWWWWWWBWWWWWWWWWWWWWWWWWWWWWWWB",
-"BWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWB",
-"BWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWB",
-"BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB"
+static char * vacuum_enhanced_xpm[] = {
+"50 50 6 1",
+"a c #808080",
+"b c #000000",
+"c c #FF0000",
+"d c #A9A9A9",
+"e c #C0C0C0",
+"  c None",
+/* pixels */
+"                                                  "
+"                                                  "
+"                                                  "
+"                                                  "
+"                                                  "
+"                                                  "
+"                        bbb                       "
+"                         e                        "
+"                    eeeeeeeeeee                   "
+"                 eeeeeeeeeeeeeeeee                "
+"                eeeeeeeeeeeeeeeeeee               "
+"              eeeeeeeeeeeeeeeeeeeeeee             "
+"             eeeeeeeeeeeeeeeeeeeeeeeee            "
+"            eeeeeeeeeeeeeeeeeeeeeeeeeee           "
+"           eeeeeeeeeeeeeedeeeeeeeeeeeeee          "
+"           eeeeeeeeeeeeedddeeeeeeeeeeeee          "
+"          eeeeeeeeeeeeedddddeeeeeeeeeeeee         "
+"         eeeeeeeeeeeeedddddddeeeeeeeeeeeee        "
+"         eeeeeeeeeeeedddddddddeeeeeeeeeeee        "
+"         eeeeeeeeeeedddddcdddddeeeeeeeeeee        "
+"        eeeeeeeeeeeddddddaddddddeeeeeeeeeee       "
+"        eeeeeeeeeeddddddacaddddddeeeeeeeeee       "
+"        eeeeeeeeeddddddaaaaaddddddeeeeeeeee       "
+"        eeeeeeeeddddddaaaaaaaddddddeeeeeeee       "
+"      b eeeeeeedddddcaaaaaaaaacdddddeeeeeee b     "
+"      beeeeeeeddddddaaaaaaaaaaaddddddeeeeeeeb      "
+"      b eeeeeeedddddcaaaaaaaaacdddddeeeeeee b     "
+"        eeeeeeeeddddddaaaaaaaddddddeeeeeeee       "
+"        eeeeeeeeeddddddaaaaaddddddeeeeeeeee       "
+"        eeeeeeeeeeddddddacaddddddeeeeeeeeee       "
+"        eeeeeeeeeeeddddddaddddddeeeeeeeeeee       "
+"         eeeeeeeeeeedddddcdddddeeeeeeeeeee        "
+"         eeeeeeeeeeeedddddddddeeeeeeeeeeee        "
+"         eeeeeeeeeeeeedddddddeeeeeeeeeeeee        "
+"          eeeeeeeeeeeeedddddeeeeeeeeeeeee         "
+"           eeeeeeeeeeeeedddeeeeeeeeeeeee          "
+"           eeeeeeeeeeeeeedeeeeeeeeeeeeee          "
+"            eeeeeeeeeeeeeeeeeeeeeeeeeee           "
+"             eeeeeeeeeeeeeeeeeeeeeeeee            "
+"              eeeeeeeeeeeeeeeeeeeeeee             "
+"                eeeeeeeeeeeeeeeeeee               "
+"                 eeeeeeeeeeeeeeeee                "
+"                    eeeeeeeeeee                   "
+"                         e                        "
+"                        bbb                       "
+"                                                  "
+"                                                  "
+"                                                  "
+"                                                  "
+"                                                  "
 };

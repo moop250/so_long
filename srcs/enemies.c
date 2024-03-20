@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 17:28:41 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/19 23:38:54 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/20 10:48:15 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ int	checkback(t_mlx *game, int x, int y)
 	enemies = game->map->enemies;
 	while (point)
 	{
-		if (point->content->pos.x == x && point->content->pos.y == y)
+		if (point->content->pos.x == x && point->content->pos.y == y
+			&& point->content->collected == 0)
 			return (1);
 		point = point->next;
 	}

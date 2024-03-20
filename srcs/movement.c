@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 10:22:39 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/20 00:01:28 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/20 11:41:34 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,8 @@ void	sl_movedir(t_mlx *game, char **data, t_player *player, int dir)
 {
 	int	canmove;
 
+	if (dir == -1)
+		return ;
 	canmove = 1;
 	if (dir == UP && (data[player->pos.y - 1][player->pos.x] != '1'))
 		player->pos.y--;

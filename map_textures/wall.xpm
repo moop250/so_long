@@ -1,59 +1,58 @@
 /* XPM */
-static char *wall[] = {
-/* width height num_colors chars_per_pixel */
-"50 50 1 1",
-/* color definition for dark grey */
-"D c #505050",
+static char * wall_xpm[] = {
+"50 50 3 1",
+"a c #A9A9A9",
+"b c #C0C0C0",
+"c c #787878",
 /* pixels */
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
-"DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
+"caaaaaaaaacababaaaaacaaaaaaaaacaaaaaaaaacaaabaaaaa"
+"caaaabaaaacaaaaaaaaacbaaaaaaaacaaabaaaaacaaaaaaaaa"
+"cbaaaaaaaacaaaaaaaaacaaaaabbbacaaaabaaaacaaaaaaaaa"
+"caaaaaaaaacaaaaaaaaacaaaaaabaacaaaaaaaaacaaaaaaaaa"
+"caaaaaaaaacbaabaaaaacaaabaabbacaaaaaaaaacaaaabaaaa"
+"caaabaaaaacaaabaabaacabaaaaaaacaaaaaaaaacaaaaaaaba"
+"caaaaaaaaacaaaaabaaacaaaaaabaacaaaaaaabacbaaaaaaaa"
+"caaaaaaaaacaaaaaaaaacabaaaabaacaaaaabaabcaaaababaa"
+"caaaaaaabacbaaabaaaacaaaabaaabcaaabaaabacaaaaababa"
+"cbabaaaaaacabbabbaabcaabaaabaacaaaaaaaaacaabaaaaaa"
+"caaaaaaabacaaaaaaaaacaaaaaaaaacaaaaaaaaacaaaaaaaaa"
+"caaaaaaaaacaaaaaaabacaaaaaaaaacaabaaaaaacbaaababaa"
+"cbbaaaaaaacaaaaaaabbcaaaaaaaaacaaaaaaaabcaaaaaaaaa"
+"caaaaaaaaacaaaaaaaaacaaaaabaaacaaaaaaaaacaaaaaaaba"
+"caaaaaaabacaaaabaaaacaaaaaaaaacaaaabaaaacaaaaaaaaa"
+"cabaaaaaaacaaabaaaaacaaaaaaaaacaaaaaaaaacbaaaaaaaa"
+"caaabaaaaacaaaaaaaaacaaabaaaaacaaaaaaaaacaaaaaaaab"
+"cbaabbaaaacaaaaaaaaacaaaaaaaaacaaaaaaaaacaaaaaaaaa"
+"caaabaaabacaaaaaaabacaaaaaaaaacaaaaaaaaacabaaaaaaa"
+"cabaaaaaaacaaababaaacaaaaaabaacaaaaaaaaacaaaaaaaaa"
+"caaaaaaaaacaaaaaaaaacaaaabaaaacaaaaaaaaacaaaaaaaaa"
+"cabaaaaaabcaaaabaaaacaaabaaaaacaaabbaabbcaaaaaaaab"
+"caaaaababacaaaaaaaaacaaaaaaaaacaaaaaaaaacaaaaaaaab"
+"cbbaaaaaaacbaaaaaabacaaaaaaaaacaaaaaabaacaaaaaaaaa"
+"caaaaaaaabcbaaabaabacbbaaabaaacaaaababaacaaaaaaaba"
+"cbaaaaaaaacaaaaaaaaacaaaabaaaacaaaaaaaaacaabaaabaa"
+"caaabaabaacaaaaaaaaacbaaaaaaaacaaabaaaaacaaaaaaaaa"
+"caaaaaaaaacaaaaaaaaacaabaabaaacaaaaaaaaacaaaaababa"
+"caaaaaaabacaabaaaaaacaaaaaaabacaaaaaaaaacaaaaaaaaa"
+"caaaaaaaaacaabaaaaaacabaaaaaaacaaaaaaaaacaaaaaaaaa"
+"caaaaaaaaacaaaaaaaaacaaaaaaaaacaaaaaaaaacaaaaaaaaa"
+"caaaaaaaaacaaaaaaaaacaaabaaaaacbaaaabaaacaaaaaaaaa"
+"caabaaaaaacaaababaaacaaaaaababcaaabaaabacaaaaabaaa"
+"caaaaaaaabcaaababaaacaaaaaabaacaaaaaabaacbbaaaaaaa"
+"caaabaaaaacaaaaaaaaacaaaaaaaaacaaaabaaaacaaaaaaaaa"
+"caaaaaaabacaabaaaaaacaaaaaaaaacaaaaaaaaacaaaaabaaa"
+"cabaaaaaaacaaaaaaaaacaaaaaaaabcaabaaaaaacaaaaaaaaa"
+"caaaaabbaacaaaaaaaaacaaaaabaaacaaaaaaaaacaaaaaaaaa"
+"caaaabaaaacaaaaaaaaacaaaaaaaabcaaaaabaaacaaaaaaaaa"
+"caaaaaaaaacbbaaaaaaacaaaaaaaaacaaaaaaaaacaaaaaaaaa"
+"caaaaaaaaacaaaaaaaaacaaaaaaaaacaabaaaaaacbaaaaaaaa"
+"cbaaaaaaaacaaaaaaaaacaabaaabaacaaaaaababcaabaabaaa"
+"caaaaaabaacaaaaaaabacaaaaabaaacaaaaaaaaacaaaaaaaaa"
+"caaaaaaaaacaaaaaaaaacaaaaaaaaacaaaaaaaabcbaaaaaaaa"
+"cabbaaaaaacaaaaaaaaacaaaaaaaaacaaaaaaaaacbaaaaaaab"
+"caaaaaaaaacaaaaaaaaacaaaabaaaacbbaaaaaaacaaabbabba"
+"cbaaaaaaaacbabaaaaaacaaaaaaaaacaaaaaaaaacabaabbaaa"
+"caaaaaaaaacaaaaaabaacaaaaaaaaacaaaaaaaaacaaaaaaaaa"
+"cabaaaaaaacaabaaabaacaaaaaaaaacaaaaaaaaacaaaaaaaaa"
+"caaaaaaabacaaaaaaaaacaaaaaaaaacaaaaaaaabcabbaaaaba"
 };
