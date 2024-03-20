@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 10:22:39 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/20 11:41:34 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/20 15:59:37 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	put_moves(t_mlx *game)
 	tmp = ft_strjoin("moves: ", ft_itoa(game->player->moves));
 	mlx_string_put(game->mlx, game->mlx_win,
 		SCALE / 10, SCALE / 2, 0xFFFFFF, tmp);
+	gfree(tmp);
 }
 
 void	enem_interact(t_mlx *game, int x, int y)
