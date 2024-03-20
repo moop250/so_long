@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 13:58:23 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/19 23:50:13 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/20 13:53:58 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,11 @@ void	object_parser(t_map *map)
 	ents[1] = 0;
 	map->enemies = NULL;
 	ent_reader(map, ents);
-	if (map->score_needed < 1 || ents[0] != 1 || ents[1] != 1)
-		sl_error("invalid map");
+	if (map->score_needed < 1)
+		sl_error("invalid map: no collectables");
+	else if (ents[0] != 1)
+		sl_error("invalid map: number of exits is not 1");
+	else if (ents[1] != 1)
+		sl_error("invalid map: number of player spawns is not 1");
 	gfree(ents);
 }

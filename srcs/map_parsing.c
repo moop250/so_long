@@ -6,7 +6,7 @@
 /*   By: hlibine <hlibine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 14:58:18 by hlibine           #+#    #+#             */
-/*   Updated: 2024/03/20 00:02:31 by hlibine          ###   ########.fr       */
+/*   Updated: 2024/03/20 13:49:50 by hlibine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,14 @@ void	mapchecker(t_map *map)
 	while (map->data[0][++i])
 	{
 		if (map->data[0][i] != '1')
-			sl_error("invaild map");
+			sl_error("invaild map: map not surrounded by walls");
 		if (map->data[map->length - 1][i] != '1')
-			sl_error("invaild map");
+			sl_error("invaild map: map not surrounded by walls");
 	}
 	i = 0;
 	while (++i < map->length)
 		if (map->data[i][0] != '1' || map->data[i][map->width - 1] != '1')
-			sl_error("invaild map");
+			sl_error("invaild map: map not surrounded by walls");
 	object_parser(map);
 	check_path(map);
 }
