@@ -49,3 +49,4 @@ Example usage of so_long:
 ```
 ./so_long maps/map.ber
 ```
+The game uses standard `W` `A` `S` `D` controls, you need to collect all the collectables for the exit to work, dont tounch the enemies... you will die.
