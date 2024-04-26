@@ -48,7 +48,7 @@ define HEADER_LIB
 /  __ \                     (_) (_)              | |   (_) |                  (_)
 | /  \/ ___  _ __ ___  _ __  _| |_ _ __   __ _   | |    _| |__  _ __ __ _ _ __ _  ___  ___
 | |    / _ \| '_ ` _ \| '_ \| | | | '_ \ / _` |  | |   | | '_ \| '__/ _` | '__| |/ _ \/ __|
-| \__/\ (_) | | | | | | |_) | | | | | | | (_| |  | |___| | |_) | | | (_| | |  | |  __/\__ \
+| \__/\ (_) | | | | | | |_) | | | | | | | (_| |  | |___| | |_) | | | (_| | |  | |  __/\__ \ 
  \____/\___/|_| |_| |_| .__/|_|_|_|_| |_|\__, |  \_____/_|_.__/|_|  \__,_|_|  |_|\___||___/
                       | |                 __/ |
                       |_|                |___/
@@ -94,7 +94,8 @@ RESET = \033[0m
 
 NAME = so_long
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror
+DEVFLAGS = -g3 -fsanitize=address
 RM = rm -f
 
 MINILIBX_LINUX_PATH = libs/minilibx-linux/
@@ -107,11 +108,13 @@ OS = $(shell uname -s)
 
 ifeq ($(OS),Linux)
 	CFLAGS += -Lmlx_linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
+	DEVFLAGS += -Lmlx_linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
 	MINILIBX_PATH = $(MINILIBX_LINUX_PATH)
 endif
 
 ifeq ($(OS),Darwin)
 	CFLAGS += -framework OpenGL -framework AppKit
+	DEVFLAGS += -Lmlx_linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
 	MINILIBX_PATH = $(MINILIBX_MAC_PATH)
 endif
 
@@ -145,18 +148,23 @@ EXFT_LIB = $(EXTENDED_FT:%=%libft.a)
 	@printf "\33[2K"
 
 $(NAME): $(SUPP) $(SRCS) $(EXFT_LIB) $(MINILIBX)
-	@echo "$(ORANGE)Compiling $(NAME)...$(RESET)"
+	@echo "$$HEADER_NAME"
 	@$(CC) $(SUPP) $(SRCS) $(EXFT_LIB) $(MINILIBX) $(CFLAGS) -o $(NAME)
 	@echo "$(GREEN)$(NAME) built successfully!$(RESET)"
 
 $(EXFT_LIB): $(EXTENDED_FT)makefile
-	@make -s -C $(EXTENDED_FT)
+	@echo "$$HEADER_LIB"
+	@make -C $(EXTENDED_FT)
 
 $(MINILIBX): $(MINILIBX_PATH)Makefile
 	@make -s all -C $(MINILIBX_PATH) 
 
 # Rules
 all: $(NAME)
+
+debug: $(SUPP) $(SRCS) $(EXFT_LIB) $(MINILIBX)
+	@echo "$(ORANGE)Compiling debug $(NAME)$(RESET)"
+	@$(CC) $(SUPP) $(SRCS) $(EXFT_LIB) $(MINILIBX) $(DEVFLAGS) -o $(NAME)
 
 clean:
 	@echo "$(ORANGE)Cleaning up...$(RESET)"
@@ -171,4 +179,7 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+header:
+	@echo "$$HEADER"
+
+.PHONY: all clean fclean re debug header
